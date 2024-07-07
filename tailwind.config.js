@@ -4,7 +4,9 @@ module.exports = {
     "./src/**/*.{html,js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {width:{
+      '120': '30rem'
+    },},
     borderRadius: {
       'none': '0',
       'sm': '0.125rem',
@@ -15,6 +17,7 @@ module.exports = {
       'full': '9999px',
       'large': '12px',
     },
+    
   },
   plugins: [],
 }

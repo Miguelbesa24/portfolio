@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <div>
-    <nav className="absolute w-full z-10 pt-10 md:px-28">
+    <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6">
         <div className="text-xl md:text-3xl md:basis-1/4 text-center">Miguel Besa</div>
         <div className="hidden md:flex space-x-10 text-2xl">
@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
       </nav>
       {isOpen && (
-        <nav className="absolute top-20 left-0 w-full bg-white bg-opacity-80 shadow-md z-20">
+        <nav className="absolute top-10 left-0 w-full bg-white bg-opacity-80 shadow-md z-20">
           <div className="flex flex-col space-y-4 p-6 text-xl">
             <a href="#about" onClick={toggleMenu}>About</a>
             <a href="#skills" onClick={toggleMenu}>Skills</a>
@@ -97,12 +97,25 @@ const Navbar = () => {
         </div>
       </section>
       <section id="skills" className='w-full min-h-screen'>
-        <div>Section 3</div>
+      <div className='text-center pt-10'>
+          <div className='font-semibold text-3xl md:text-5xl pt-2'>Skills</div>
+          <div className='flex justify-center pt-10 w-full gap-10'>
+              <div className="w-48 h-48 md:w-120 md:h-96 overflow-hidden rounded-lg border border-black">
+              <div className='pt-8 text-3xl font-semibold text-gray-600'>Frontend</div>
+              <div className='grid grid-cols-2'></div>
+              </div>
+              <div className="w-48 h-48 md:w-120 md:h-96 overflow-hidden rounded-lg border border-black">
+              <div className='pt-8 text-3xl font-semibold text-gray-600'>UI/UX</div> 
+              </div>
+         
+            
+          </div>
+        </div>
       </section>
-      <section id="skills" className='w-full min-h-screen'>
+      <section id="project" className='w-full min-h-screen'>
         <div>Section 4</div>
       </section>
-      <section id="skills" className='w-full min-h-screen'>
+      <section id="contact" className='w-full min-h-screen'>
         <div>Section 5</div>
       </section>
     </div>
