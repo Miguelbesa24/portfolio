@@ -5,6 +5,8 @@ import myresume from '../assets/myresume.pdf';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import CodeIcon from '@mui/icons-material/Code';
+import CreateIcon from '@mui/icons-material/Create';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +28,7 @@ const Navbar = () => {
     <div>
     <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6">
-        <div className="text-xl md:text-3xl md:basis-1/4 text-center">Miguel Besa</div>
+        <div className="text-xl md:text-3xl md:basis-1/4 text-center">Uel</div>
         <div className="hidden md:flex space-x-10 text-2xl">
           <a href="#about" className="hover:text-gray-400 hover-underline-offset transition duration-100">About</a>
           <a href="#skills" className="hover:text-gray-400 hover-underline-offset transition duration-100">Skills</a>
@@ -62,7 +64,7 @@ const Navbar = () => {
             <div className="text-center pt-10 md:pt-0 md:text-center md:text-xl md:max-w-lg">
               <div className={`text-md ${animate ? 'popup-animation' : ''}`}>Hello, I'm</div>
               <div className={`text-5xl font-semibold ${animate ? 'popup-animation' : ''}`}>Miguel Besa</div>
-              <div className={`text-xl text-gray-600 mt-2 ${animate ? 'popup-animation' : ''}`}>Frontend Web Developer & UI/UX Designer</div>
+              <div className={`text-xl text-gray-600 mt-2 ${animate ? 'popup-animation' : ''}`}>Frontend Web Developer | UI/UX Designer</div>
               <div className={`flex justify-center md:text-center mt-4 space-x-2 ${animate ? 'popup-animation' : ''}`}>
                 <button onClick={openPdf} className="border-2 border-black rounded-full text-sm font-bold p-2 hover:bg-gray-800 hover:text-white">
                   Download CV
@@ -97,21 +99,33 @@ const Navbar = () => {
         </div>
       </section>
       <section id="skills" className='w-full min-h-screen'>
-      <div className='text-center pt-10'>
-          <div className='font-semibold text-3xl md:text-5xl pt-2'>Skills</div>
-          <div className='flex justify-center pt-10 w-full gap-10'>
-              <div className="w-48 h-48 md:w-120 md:h-96 overflow-hidden rounded-lg border border-black">
-              <div className='pt-8 text-3xl font-semibold text-gray-600'>Frontend</div>
-              <div className='grid grid-cols-2'></div>
-              </div>
-              <div className="w-48 h-48 md:w-120 md:h-96 overflow-hidden rounded-lg border border-black">
-              <div className='pt-8 text-3xl font-semibold text-gray-600'>UI/UX</div> 
-              </div>
-         
-            
-          </div>
+    <div className='pt-10'>
+        <div className='font-semibold text-3xl md:text-5xl pt-2 text-center'>Skills</div>
+        <div className='flex flex-col md:flex-row justify-center pt-10 w-full gap-10'>
+            <div className="w-auto md:w-120 h-auto md:h-80 overflow-hidden rounded-lg border border-black m-4">
+                <div className='pt-8 text-xl md:text-3xl font-semibold text-gray-600 text-center'>Frontend Development</div>
+                <div className='grid md:grid-cols-2 gap-4 py-8 px-4 md:px-24 text-center'>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> HTML </div>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> CSS </div>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> Reactjs</div>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> Tailwind</div>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> Material Ui</div>
+                </div>
+            </div>
+            <div className="w-auto md:w-120 h-auto md:h-80 overflow-hidden rounded-lg border border-black m-4">
+                <div className='pt-8 text-xl md:text-3xl font-semibold text-gray-600 text-center'>UI/UX Design</div> 
+                <div className='grid md:grid-cols-2 gap-4 py-8 px-4 md:px-24 text-center'>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'><CreateIcon fontSize='medium'/> Figma </div>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'><CreateIcon fontSize='medium'/> Photoshop</div>
+                    <div className='py-2 font-semibold text-lg flex items-center justify-center'><CreateIcon fontSize='medium'/> Illustrator</div>
+                </div>
+            </div>
         </div>
-      </section>
+    </div>
+</section>
+
+
+
       <section id="project" className='w-full min-h-screen'>
         <div>Section 4</div>
       </section>
