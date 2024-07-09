@@ -35,18 +35,17 @@ a, .btn{
   width: 100%;
 }
 
-@keyframes popup {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+
+
+.blank-state {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
 .popup-animation {
-  animation: popup 1s ease-out;
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+  
 }
+
 
