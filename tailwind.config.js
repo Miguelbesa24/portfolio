@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     extend: {width:{
       '120': '30rem'
+    },
+    textAlign: {
+      justify: 'justify',
     },},
     borderRadius: {
       'none': '0',

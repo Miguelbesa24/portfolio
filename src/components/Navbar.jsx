@@ -7,6 +7,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CodeIcon from '@mui/icons-material/Code';
 import CreateIcon from '@mui/icons-material/Create';
+import SchoolIcon from '@mui/icons-material/School';
+import ComputerIcon from '@mui/icons-material/Computer';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,22 +28,22 @@ const Navbar = () => {
 
   return (
     <div>
-    <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28">
-      <div className="flex justify-between items-center max-w-7xl mx-auto px-6">
-        <div className="text-xl md:text-3xl md:basis-1/4 text-center">Uel</div>
-        <div className="hidden md:flex space-x-10 text-2xl">
-          <a href="#about" className="hover:text-gray-400 hover-underline-offset transition duration-100">About</a>
-          <a href="#skills" className="hover:text-gray-400 hover-underline-offset transition duration-100">Skills</a>
-          <a href="#project" className="hover:text-gray-400 hover-underline-offset transition duration-100">Project</a>
-          <a href="#contact" className="hover:text-gray-400 hover-underline-offset transition duration-100">Contact</a>
-        </div>
+      <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28">
+        <div className="flex justify-between items-center max-w-7xl mx-auto px-6">
+          <div className="text-xl md:text-3xl md:basis-1/4 text-center">Uel</div>
+          <div className="hidden md:flex space-x-10 text-2xl">
+            <a href="#about" className="hover:text-gray-400 hover-underline-offset transition duration-100">About</a>
+            <a href="#skills" className="hover:text-gray-400 hover-underline-offset transition duration-100">Skills</a>
+            <a href="#project" className="hover:text-gray-400 hover-underline-offset transition duration-100">Project</a>
+            <a href="#contact" className="hover:text-gray-400 hover-underline-offset transition duration-100">Contact</a>
+          </div>
 
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-2xl focus:outline-none">
-            &#9776;
-          </button>
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-2xl focus:outline-none">
+              &#9776;
+            </button>
+          </div>
         </div>
-      </div>
       </nav>
       {isOpen && (
         <nav className="absolute top-10 left-0 w-full bg-white bg-opacity-80 shadow-md z-20">
@@ -53,7 +55,7 @@ const Navbar = () => {
           </div>
         </nav>
       )}
-       <section id="profile" className="w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-6">
+      <section id="profile" className="w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-6">
         <div className="flex flex-col items-center md:flex-row md:justify-center w-full">
           <div className='w-full md:w-1/2 flex justify-center'>
             <div className="w-64 h-96 md:w-64 md:h-96 overflow-hidden rounded-full block mx-auto mb-4 md:mb-0 md:mr-8">
@@ -63,8 +65,8 @@ const Navbar = () => {
           <div className={`basis-1/2 ${animate ? 'popup-animation' : ''}`}>
             <div className="text-center pt-10 md:pt-0 md:text-center md:text-xl md:max-w-lg">
               <div className={`text-md ${animate ? 'popup-animation' : ''}`}>Hello, I'm</div>
-              <div className={`text-5xl font-semibold ${animate ? 'popup-animation' : ''}`}>Miguel Besa</div>
-              <div className={`text-xl text-gray-600 mt-2 ${animate ? 'popup-animation' : ''}`}>Frontend Web Developer | UI/UX Designer</div>
+              <div className={`text-4xl md:text-5xl font-semibold ${animate ? 'popup-animation' : ''}`}>Miguel Besa</div>
+              <div className={`text-lg md:text-xl text-gray-600 mt-2 ${animate ? 'popup-animation' : ''}`}>Frontend Web Developer | UI/UX Designer</div>
               <div className={`flex justify-center md:text-center mt-4 space-x-2 ${animate ? 'popup-animation' : ''}`}>
                 <button onClick={openPdf} className="border-2 border-black rounded-full text-sm font-bold p-2 hover:bg-gray-800 hover:text-white">
                   Download CV
@@ -83,48 +85,78 @@ const Navbar = () => {
           <div className='text-gray-600'>Get to know more</div>
           <div className='font-semibold text-3xl md:text-5xl pt-2'>About me</div>
           <div className='grid grid-cols-1 md:grid-cols-2 pt-10 w-full'>
-            <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center md:justify-end">
               <div className="w-48 h-48 md:w-96 md:h-96 overflow-hidden rounded-lg mb-4 md:mb-0 md:mr-8">
                 <img src={myimage2} alt='My Profile' className='w-full h-full object-cover' />
               </div>
             </div>
-            <div className='flex flex-col justify-center items-center text-center px-4 md:px-0'>
-              <div className='grid grid-cols-2 gap-4'>
-                <div className='border border-black rounded-lg h-24 w-24 md:h-52 md:w-48'>Content 1</div>
-                <div className='border border-black rounded-lg h-24 w-24 md:h-52 md:w-48'>Content 2</div>
+            <div className='flex flex-col items-center text-center px-4 md:px-0'>
+              <div className='grid md:grid-cols-2 gap-4'>
+                <div className='border border-black rounded-lg h-40 w-72 md:h-52 md:w-48 pt-4'>
+                  <SchoolIcon fontSize='large'/>
+                  <div className='font-semibold text-xl pt-2'>College</div>
+                  <div className='pt-2'>STI College Ortigas-Cainta</div> 
+                </div>
+                <div className='border border-black rounded-lg h-40 w-72 md:h-52 md:w-48 pt-4'>
+                  <ComputerIcon fontSize='large'/> 
+                  <div className='font-semibold text-xl pt-2'>Education</div>
+                  <div className='pt-2'>Bachelor of Science in Computer Science</div> 
+                </div>
               </div>
-              <div className='mt-4'>Additional Info</div>
+              <div className='mt-4 text-justify px-4 md:px-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Cursus turpis massa tincidunt dui ut ornare lectus. Nulla aliquet porttitor lacus luctus accumsan tortor posuere.</div>
             </div>
           </div>
         </div>
       </section>
       <section id="skills" className='w-full min-h-screen'>
-    <div className='pt-10'>
-        <div className='font-semibold text-3xl md:text-5xl pt-2 text-center'>Skills</div>
-        <div className='flex flex-col md:flex-row justify-center pt-10 w-full gap-10'>
-            <div className="w-auto md:w-120 h-auto md:h-80 overflow-hidden rounded-lg border border-black m-4">
-                <div className='pt-8 text-xl md:text-3xl font-semibold text-gray-600 text-center'>Frontend Development</div>
-                <div className='grid md:grid-cols-2 gap-4 py-8 px-4 md:px-24 text-center'>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> HTML </div>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> CSS </div>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> Reactjs</div>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> Tailwind</div>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'> <CodeIcon fontSize='large'/> Material Ui</div>
-                </div>
-            </div>
-            <div className="w-auto md:w-120 h-auto md:h-80 overflow-hidden rounded-lg border border-black m-4">
-                <div className='pt-8 text-xl md:text-3xl font-semibold text-gray-600 text-center'>UI/UX Design</div> 
-                <div className='grid md:grid-cols-2 gap-4 py-8 px-4 md:px-24 text-center'>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'><CreateIcon fontSize='medium'/> Figma </div>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'><CreateIcon fontSize='medium'/> Photoshop</div>
-                    <div className='py-2 font-semibold text-lg flex items-center justify-center'><CreateIcon fontSize='medium'/> Illustrator</div>
-                </div>
-            </div>
+  <div className='pt-10 px-4 md:px-0'>
+    <div className='font-semibold text-3xl md:text-5xl pt-2 text-center'>Skills</div>
+    <div className='flex flex-col md:flex-row justify-center pt-10 w-full gap-10'>
+      <div className="w-auto md:w-120 h-auto md:h-80 overflow-hidden rounded-lg border border-gray-500 m-4 px-4 md:px-0">
+        <div className='pt-8 text-xl md:text-3xl font-semibold text-gray-600 text-center'>Frontend Development</div>
+        <div className='grid md:grid-cols-2 gap-4 py-8 md:px-20'>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CodeIcon fontSize='large' className='mr-2'/> 
+            HTML 
+          </div>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CodeIcon fontSize='large' className='mr-2'/> 
+            CSS 
+          </div>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CodeIcon fontSize='large' className='mr-2'/> 
+            Reactjs
+          </div>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CodeIcon fontSize='large' className='mr-2'/> 
+            Tailwind
+          </div>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CodeIcon fontSize='large' className='mr-2'/> 
+            Material Ui
+          </div>
         </div>
+      </div>
+      <div className="w-auto md:w-120 h-auto md:h-80 overflow-hidden rounded-lg border border-gray-500 m-4 px-4 md:px-0">
+        <div className='pt-8 text-xl md:text-3xl font-semibold text-gray-600 text-center'>UI/UX Design</div> 
+        <div className='grid md:grid-cols-2 gap-4 py-8 px-4 md:px-24'>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CreateIcon fontSize='medium' className='mr-2'/> 
+            Figma 
+          </div>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CreateIcon fontSize='medium' className='mr-2'/> 
+            Photoshop
+          </div>
+          <div className='py-2 font-semibold text-lg flex items-center justify-center md:justify-start'> 
+            <CreateIcon fontSize='medium' className='mr-2'/> 
+            Illustrator
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-
-
 
       <section id="project" className='w-full min-h-screen'>
         <div>Section 4</div>
