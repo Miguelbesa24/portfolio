@@ -4,6 +4,7 @@ import myimage2 from '../assets/myimage2.png';
 import coffee1 from '../assets/coffee1.jpg';
 import coffee2 from '../assets/coffee2.jpg';
 import coffee3 from '../assets/coffee3.jpg';
+import Logo from '../assets/Logo.png';
 import system from '../assets/system.jpg';
 import myresume from '../assets/myresume.pdf';
 import IconButton from '@mui/material/IconButton';
@@ -34,7 +35,7 @@ const Navbar = () => {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 0.1,
     };
 
     const observerCallback = (entries) => {
@@ -85,7 +86,7 @@ const Navbar = () => {
     <div>
       <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28">
         <div className="flex justify-between items-center max-w-7xl mx-auto px-6">
-          <div className="text-xl md:text-3xl md:basis-1/4 text-center">Uel</div>
+          <div className="text-sm md:text-xl md:basis-1/4 text-center flex items-center text-gray-700">   <img src={Logo} alt='Logo' className=' w-12 h-12 md:w-16 md:h-16' /> Miguel Besa</div>
           <div className="hidden md:flex space-x-10 text-2xl">
             <a href="#about" className="hover:text-gray-400 hover-underline-offset transition duration-100">About</a>
             <a href="#skills" className="hover:text-gray-400 hover-underline-offset transition duration-100">Skills</a>
@@ -157,7 +158,7 @@ const Navbar = () => {
                   <div className='pt-2'>Bachelor of Science in Computer Science</div> 
                 </div>
               </div>
-              <div className='mt-4 text-justify px-4 md:px-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque diam volutpat commodo sed egestas egestas. Turpis Tristique nulla aliquet enim tortor. Euismod lacinia at quis risus sed vulputate odio ut enim. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Purus gravida quis blandit turpis cursus in hac habitasse platea.</div>
+              <div className='mt-4 text-justify px-4 md:px-8'>Hi, I'm Miguel Antonio Besa, a 4th-year computer science student at STI Ortigas-Cainta. I have a strong passion for Frontend Development and UI/UX Design. I am dedicated to continuous improvement in my field. I am eager to enhance my skills in both UI/UX designing and programming. My commitment to growth drives my learning and professional development.</div>
             </div>
           </div>
         </div>
@@ -216,7 +217,7 @@ const Navbar = () => {
         <div className='pt-10 px-4 md:px-0'>
           <div className='text-gray-600 text-center text-lg'>My Recent</div>
           <div className='font-semibold text-3xl md:text-5xl pt-2 text-center'>Projects</div>
-          <div className={`flex justify-center pt-8 px-4 ${animatedSections.project ? 'popup-animation' : ''}`}> 
+          <div className='flex justify-center pt-8 px-4'> 
             <div className="border border-gray-500 md:flex items-center justify-center p-10 rounded-lg">
               <div>
                 <img src={coffee1} alt="Coffee1" className=' h-96 w-44' />
@@ -229,7 +230,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className={`flex justify-center pt-8 px-2 ${animatedSections.project ? 'popup-animation' : ''}`}> 
+          <div className='flex justify-center pt-8 px-2'> 
             <div className='border border-gray-500 flex items-center justify-center rounded-lg p-4'>
               <img src={system} alt="System" className=' h-52 md:h-96'/>
             </div>
@@ -242,7 +243,7 @@ const Navbar = () => {
           <div className="font-semibold text-3xl md:text-5xl pt-2 text-center">Contact Me</div>
           <div className="flex flex-col md:flex-row text-center items-center justify-center pt-10">
             <div className="px-4 mb-4 md:mb-0 hover:text-gray-400 hover-underline-offset transition duration-100">
-              <a href="mailto:miguelbesa249@gmail.com" className="flex items-center justify-center ">
+              <a href="https://mail.google.com/mail/?view=cm&to=miguelbesa249@gmail.com&su&body" className="flex items-center justify-center ">
                 <EmailIcon fontSize="large" className="mr-2" /> 
                 miguelbesa249@gmail.com
               </a>
