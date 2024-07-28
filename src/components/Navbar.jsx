@@ -6,7 +6,7 @@ import coffee2 from '../assets/coffee2.jpg';
 import coffee3 from '../assets/coffee3.jpg';
 import Logo from '../assets/Logo.png';
 import system from '../assets/system.jpg';
-import myresume from '../assets/myresume.pdf';
+import resume from '../assets/resume.pdf';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -79,7 +79,7 @@ const Navbar = () => {
   };
 
   const openPdf = () => {
-    window.open(myresume, '_blank');
+    window.open(resume, '_blank');
   };
 
   return (
@@ -126,7 +126,7 @@ const Navbar = () => {
                 <button onClick={openPdf} className="border-2 border-black rounded-full text-sm font-bold p-2 hover:bg-gray-800 hover:text-white">
                   Download CV
                 </button>
-                <a href="https://www.linkedin.com/in/miguel-antonio-besa-496b97299" target="_blank" rel="noopener noreferrer">
+                <a href="www.linkedin.com/in/miguelbesa2420021214" target="_blank" rel="noopener noreferrer">
                   <IconButton size="small"><LinkedInIcon fontSize='large' /></IconButton>
                 </a>
                 <IconButton size="small"><GitHubIcon fontSize='large' /></IconButton>
@@ -249,7 +249,7 @@ const Navbar = () => {
               </a>
             </div>
             <div className="px-4 hover:text-gray-400 hover-underline-offset transition duration-100">
-              <a href="https://www.linkedin.com/in/miguel-antonio-besa-496b97299" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+              <a href="www.linkedin.com/in/miguelbesa2420021214" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                 <LinkedInIcon fontSize="large" /> 
                 LinkedIn
               </a>
