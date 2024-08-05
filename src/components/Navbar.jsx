@@ -158,7 +158,7 @@ const Navbar = () => {
                   <div className='pt-2'>Bachelor of Science in Computer Science</div> 
                 </div>
               </div>
-              <div className='mt-4 text-justify px-4 md:px-8'>Hi, I'm Miguel Antonio Besa, a 4th-year computer science student at STI Ortigas-Cainta. I have a strong passion for Frontend Development and UI/UX Design. I am dedicated to continuous improvement in my field. I am eager to enhance my skills in both UI/UX designing and programming. My commitment to growth drives my learning and professional development.</div>
+              <div className='mt-4 text-justify px-4 md:px-8'>Hi, I'm Miguel Antonio Besa, a Computer Science graduate. I have a strong passion for Frontend Development and UI/UX Design. I am dedicated to continuous improvement in my field. I am eager to enhance my skills in both UI/UX designing and programming. My commitment to growth drives my learning and professional development.</div>
             </div>
           </div>
         </div>
