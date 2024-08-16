@@ -15,6 +15,7 @@ import CreateIcon from '@mui/icons-material/Create';
 import SchoolIcon from '@mui/icons-material/School';
 import ComputerIcon from '@mui/icons-material/Computer';
 import EmailIcon from '@mui/icons-material/Email';
+import Lux from '../assets/Lux.PNG';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,10 +85,10 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28">
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-6">
-          <div className="text-sm md:text-xl md:basis-1/4 text-center flex items-center text-gray-700">   <img src={Logo} alt='Logo' className=' w-12 h-12 md:w-16 md:h-16' /> Miguel Besa</div>
-          <div className="hidden md:flex space-x-10 text-2xl">
+      <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28 ">
+        <div className="flex justify-between items-center max-w-8xl mx-auto ">
+          <div className="text-sm md:text-xl xl:text-4xl md:basis-1/4 text-center flex items-center text-gray-700">   <img src={Logo} alt='Logo' className=' w-12 h-12 md:w-16 md:h-16 xl:w-24 xl:h-24' /> Miguel Besa</div>
+          <div className="hidden md:flex space-x-10 xl:space-x-16 text-2xl xl:text-4xl">
             <a href="#about" className="hover:text-gray-400 hover-underline-offset transition duration-100">About</a>
             <a href="#skills" className="hover:text-gray-400 hover-underline-offset transition duration-100">Skills</a>
             <a href="#project" className="hover:text-gray-400 hover-underline-offset transition duration-100">Project</a>
@@ -101,35 +102,41 @@ const Navbar = () => {
         </div>
       </nav>
       {isOpen && (
-        <nav className="absolute top-10 left-0 w-full bg-white bg-opacity-80 shadow-md z-20">
-          <div className="flex flex-col space-y-4 p-6 text-xl">
-            <a href="#about" onClick={toggleMenu}>About</a>
-            <a href="#skills" onClick={toggleMenu}>Skills</a>
-            <a href="#project" onClick={toggleMenu}>Project</a>
-            <a href="#contact" onClick={toggleMenu}>Contact</a>
-          </div>
-        </nav>
-      )}
+  <nav className="absolute top-0 right-0 w-3/4 h-auto bg-white shadow-md z-20">
+    <div className="flex flex-col p-6 text-xl h-full">
+      <button onClick={toggleMenu} className="self-end text-2xl font-bold mb-6">
+        &times;
+      </button>
+      <a href="#about" onClick={toggleMenu} className="mb-4">About</a>
+      <a href="#skills" onClick={toggleMenu} className="mb-4">Skills</a>
+      <a href="#project" onClick={toggleMenu} className="mb-4">Project</a>
+      <a href="#contact" onClick={toggleMenu} className="mb-4">Contact</a>
+    </div>
+  </nav>
+)}
+
       <section id="profile" ref={profileRef} className={`w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-6 ${animatedSections.profile ? 'popup-animation' : 'blank-state'}`}>
         <div className="flex flex-col items-center md:flex-row md:justify-center w-full">
           <div className='w-full md:w-1/2 flex justify-center'>
-            <div className="w-64 h-96 md:w-64 md:h-96 overflow-hidden rounded-full block mx-auto mb-4 md:mb-0 md:mr-8">
+            <div className="w-64 h-96 md:w-64 md:h-96 xl:h-160 xl:w-96 overflow-hidden rounded-full  block mx-auto mb-4 md:mb-0 md:mr-8">
               <img src={myimage} alt='My Profile' className='w-full h-full object-cover' />
             </div>
           </div>
-          <div className="basis-1/2">
-            <div className="text-center pt-10 md:pt-0 md:text-center md:text-xl md:max-w-lg">
-              <div className="text-md">Hello, I'm</div>
-              <div className="text-4xl md:text-5xl font-semibold">Miguel Besa</div>
-              <div className="text-lg md:text-xl text-gray-600 mt-2">Frontend Web Developer | UI/UX Designer</div>
+          <div className="basis-1/2  flex justify-center">
+            <div className="text-center pt-10 md:pt-0 md:text-center md:text-xl md:max-w-lg xl:max-w-3xl">
+              <div className="text-md xl:text-2xl">Hello, I'm</div>
+              <div className="text-4xl xl:text-7xl md:text-5xl font-semibold ">Miguel Besa</div>
+              <div className="text-lg md:text-xl xl:text-4xl text-gray-600 mt-2">Frontend Web Developer | UI/UX Designer</div>
               <div className="flex justify-center md:text-center mt-4 space-x-2">
                 <button onClick={openPdf} className="border-2 border-black rounded-full text-sm font-bold p-2 hover:bg-gray-800 hover:text-white">
                   Download CV
                 </button>
                 <a href="https://www.linkedin.com/in/miguelbesa2420021214" target="_blank" rel="noopener noreferrer">
-                  <IconButton size="small"><LinkedInIcon fontSize='large' /></IconButton>
+                  <IconButton size="small" sx={{
+          fontSize: { xl: 'xx-large'}}}><LinkedInIcon fontSize='large' /></IconButton>
                 </a>
-                <IconButton size="small"><GitHubIcon fontSize='large' /></IconButton>
+                <IconButton size="small"     sx={{
+            fontSize: {   xl: 50  }}}><GitHubIcon fontSize='large' /></IconButton>
               </div>
             </div>
           </div>
@@ -217,16 +224,16 @@ const Navbar = () => {
         <div className='pt-10 px-4 md:px-0'>
           <div className='text-gray-600 text-center text-lg'>My Recent</div>
           <div className='font-semibold text-3xl md:text-5xl pt-2 text-center'>Projects</div>
-          <div className='flex justify-center pt-8 px-4'> 
-            <div className="border border-gray-500 md:flex items-center justify-center p-10 rounded-lg">
+          <div className='flex justify-center pt-8 md:px-4'> 
+            <div className="border border-gray-500 flex items-center justify-center md:p-10 p-4 rounded-lg">
               <div>
-                <img src={coffee1} alt="Coffee1" className=' h-96 w-44' />
+                <img src={coffee1} alt="Coffee1" className=' md:h-96 md:w-44 h-52' />
               </div>
               <div>
-                <img src={coffee2} alt="Coffee2" className='w-44 h-96 mx-10'/>
+                <img src={coffee2} alt="Coffee2" className='md:w-44 md:h-96 h-52 md:mx-10'/>
               </div>
               <div>
-                <img src={coffee3} alt="Coffee3" className='w-44 h-96' />
+                <img src={coffee3} alt="Coffee3" className='md:w-44 md:h-96 h-52' />
               </div>
             </div>
           </div>
@@ -235,6 +242,15 @@ const Navbar = () => {
               <img src={system} alt="System" className=' h-52 md:h-96'/>
             </div>
           </div>
+          <div className='flex justify-center pt-8 px-2'> 
+  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
+    <img src={Lux} alt="Lux" className='h-36 md:h-80 md:rounded-lg rounded-md'/>
+    <a href="https://miguelbesa24.github.io/Luxury-Presence---Project/" target="_blank" rel="noopener noreferrer" className="mt-4 border border-black text-black font-semibold py-2 px-6 rounded-full transition-colors duration-300 hover:bg-black hover:text-white">
+      Live Demo
+    </a>
+  </div>
+</div>
+
         </div>
       </section>
       <section id="contact" ref={contactRef} className={`w-full min-h-fit py-10 ${animatedSections.contact ? 'popup-animation' : 'blank-state'}`}>

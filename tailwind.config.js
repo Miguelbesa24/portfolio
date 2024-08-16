@@ -7,6 +7,9 @@ module.exports = {
     extend: {width:{
       '120': '30rem'
     },
+    height:{
+      '160': '40rem'
+    },
     textAlign: {
       justify: 'justify',
     },},
