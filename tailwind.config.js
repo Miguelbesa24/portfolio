@@ -5,9 +5,21 @@ module.exports = {
   ],
   theme: {
     extend: {width:{
-      '120': '30rem'
+      '120': '30rem',
+      '140': '35rem',
+      '144': '36rem',
+      '148': '37rem',
+      '152': '38rem',
+      '160': '40rem'
+      
     },
     height:{
+        '120': '30rem',
+        '130': '32rem',
+      '140': '35rem',
+      '144': '36rem',
+      '148': '37rem',
+      '152': '38rem',
       '160': '40rem'
     },
     textAlign: {
