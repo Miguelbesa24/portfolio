@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.1721a562.css",
-    "main.js": "/portfolio/static/js/main.74169664.js",
+    "main.js": "/portfolio/static/js/main.ec84310f.js",
     "static/media/myimage3.JPG": "/portfolio/static/media/myimage3.f82dbcc67a24efacc0b8.JPG",
     "static/media/Lux.PNG": "/portfolio/static/media/Lux.de03ee8fc90393edb63f.PNG",
     "static/media/system.jpg": "/portfolio/static/media/system.5455bd704e289260a0ed.jpg",
@@ -10,13 +10,13 @@
     "static/media/coffee3.jpg": "/portfolio/static/media/coffee3.f2fa33a881318447a032.jpg",
     "static/media/Logo.png": "/portfolio/static/media/Logo.bc16bcabac236c7ca538.png",
     "static/media/myimage.png": "/portfolio/static/media/myimage.9b37941c28b20435c546.png",
-    "static/media/resume.pdf": "/portfolio/static/media/resume.3838e8a0d5866c0f1569.pdf",
+    "static/media/Besa_Miguel_Resume.pdf": "/portfolio/static/media/Besa_Miguel_Resume.c42d2e79464537f5817b.pdf",
     "index.html": "/portfolio/index.html",
     "main.1721a562.css.map": "/portfolio/static/css/main.1721a562.css.map",
-    "main.74169664.js.map": "/portfolio/static/js/main.74169664.js.map"
+    "main.ec84310f.js.map": "/portfolio/static/js/main.ec84310f.js.map"
   },
   "entrypoints": [
     "static/css/main.1721a562.css",
-    "static/js/main.74169664.js"
+    "static/js/main.ec84310f.js"
   ]
 }
