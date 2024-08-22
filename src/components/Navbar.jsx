@@ -6,7 +6,7 @@ import coffee2 from '../assets/coffee2.jpg';
 import coffee3 from '../assets/coffee3.jpg';
 import Logo from '../assets/Logo.png';
 import system from '../assets/system.jpg';
-import resume from '../assets/resume.pdf';
+import resume from '../assets/Besa_Miguel_Resume.pdf';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
