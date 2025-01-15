@@ -4,6 +4,9 @@ import myimage3 from '../assets/myimage3.JPG';
 import coffee1 from '../assets/coffee1.jpg';
 import coffee2 from '../assets/coffee2.jpg';
 import coffee3 from '../assets/coffee3.jpg';
+import Shoes1 from '../assets/Shoes1.jpg';
+import Shoes2 from '../assets/Shoes2.jpg';
+import Shoes3 from '../assets/Shoes3.jpg';
 import Logo from '../assets/Logo.png';
 import system from '../assets/system.jpg';
 import resume from '../assets/Besa_Resume.pdf';
@@ -16,6 +19,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import ComputerIcon from '@mui/icons-material/Computer';
 import EmailIcon from '@mui/icons-material/Email';
 import Lux from '../assets/Lux.PNG';
+import Travel from '../assets/Travel.PNG';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,7 +98,7 @@ const Navbar = () => {
             <a href="#project" className="hover:text-gray-400 hover-underline-offset transition duration-100">Project</a>
             <a href="#contact" className="hover:text-gray-400 hover-underline-offset transition duration-100">Contact</a>
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden pr-4">
             <button onClick={toggleMenu} className="text-2xl focus:outline-none">
               &#9776;
             </button>
@@ -240,24 +244,80 @@ const Navbar = () => {
         <div className='pt-10 px-4 md:px-0'>
           <div className='text-gray-600 text-center text-lg xl:text-2xl'>My Recent</div>
           <div className='font-semibold text-3xl md:text-5xl xl:text-7xl pt-2 text-center'>Projects</div>
-          <div className='flex justify-center pt-8 md:px-4'> 
-            <div className="border border-gray-500 flex items-center justify-center md:p-10 p-4 rounded-lg">
-              <div>
-                <img src={coffee1} alt="Coffee1" className=' xl:h-160 xl:w-80 md:h-96 md:w-44 h-52' />
-              </div>
-              <div>
-                <img src={coffee2} alt="Coffee2" className=' xl:h-160 xl:w-80 md:w-44 md:h-96 h-52 md:mx-10'/>
-              </div>
-              <div>
-                <img src={coffee3} alt="Coffee3" className=' xl:h-160 xl:w-80 md:w-44 md:h-96 h-52' />
-              </div>
+          
+          <div className="flex justify-center pt-8 md:px-6">
+  <div className="border border-gray-500 rounded-lg p-4 md:p-10 grid gap-6">
+    {/* Image Section */}
+    <div className="flex justify-center px-10  gap-4 md:gap-6">
+      <img
+        src={coffee1}
+        alt="UI design showcasing coffee menu 1"
+        className="rounded-xl xl:h-160 xl:w-80 md:h-96 md:w-44 h-52"
+      />
+      <img
+        src={coffee2}
+        alt="UI design showcasing coffee menu 2"
+        className="rounded-xl xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 "
+      />
+      <img
+        src={coffee3}
+        alt="UI design showcasing coffee menu 3"
+        className="rounded-xl xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 "
+      />
+    </div>
+
+    {/* Text Section */}
+    <div className="text-center lg:text-2xl text-xl font-semibold text-gray-800">
+      Coffee Shop App UI Design
+    </div>
+  </div>
+</div>
+<div className="flex justify-center pt-8 md:px-6">
+  <div className="border border-gray-500 rounded-lg p-4 md:p-10 grid gap-6 bg-gray-100">
+    {/* Image Section */}
+    <div className="flex justify-center px-10 gap-4 md:gap-6">
+      <img
+        src={Shoes1}
+        alt="UI design showcasing coffee menu 1"
+        className="rounded-[20px] xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 object-cover"
+      />
+      <img
+        src={Shoes2}
+        alt="UI design showcasing coffee menu 2"
+        className="rounded-[20px] xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 object-cover"
+      />
+      <img
+        src={Shoes3}
+        alt="UI design showcasing coffee menu 3"
+        className="rounded-[20px] xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 object-cover"
+      />
+    </div>
+
+    {/* Text Section */}
+    <div className="text-center lg:text-2xl text-xl font-semibold text-gray-800">
+      Shoes App UI Design
+    </div>
+  </div>
+</div>
+
+          <div className='flex justify-center pt-8 px-2'> 
+            <div className='border border-gray-500 grid-cols-2 rounded-lg p-4'>
+              <img src={system} alt="System" className=' h-52 md:h-96 xl:h-152'/>
+
+              <div className="text-center lg:text-2xl text-xl font-semibold text-gray-800">
+                  System Dashboard UI Design
+                  </div>
             </div>
+            
           </div>
           <div className='flex justify-center pt-8 px-2'> 
-            <div className='border border-gray-500 flex items-center justify-center rounded-lg p-4'>
-              <img src={system} alt="System" className=' h-52 md:h-96 xl:h-152'/>
-            </div>
-          </div>
+  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
+    <img src={Travel} alt="Travel" className='h-36 md:h-110 xl:h-160 md:rounded-lg rounded-md'/>
+    <a href="https://www.figma.com/design/9FuKaQ7mMSWvbQ9BS3STwI/Booking-Web-Project?node-id=0-1&t=kXycYFXs88DXpVEh-1" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
+      Live Demo
+    </a>
+  </div>
+</div>
           <div className='flex justify-center pt-8 px-2'> 
   <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
     <img src={Lux} alt="Lux" className='h-36 md:h-80 xl:h-130 md:rounded-lg rounded-md'/>
@@ -266,6 +326,7 @@ const Navbar = () => {
     </a>
   </div>
 </div>
+
 
         </div>
       </section>

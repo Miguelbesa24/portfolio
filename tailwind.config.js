@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {width:{
+      '110': '28rem',
       '120': '30rem',
       '140': '35rem',
       '144': '36rem',
@@ -14,13 +15,14 @@ module.exports = {
       
     },
     height:{
+      '110': '27rem',
         '120': '30rem',
         '130': '32rem',
       '140': '35rem',
       '144': '36rem',
       '148': '37rem',
       '152': '38rem',
-      '160': '40rem'
+      '160': '43rem'
     },
     textAlign: {
       justify: 'justify',
