@@ -20,6 +20,8 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import EmailIcon from '@mui/icons-material/Email';
 import Lux from '../assets/Lux.PNG';
 import Travel from '../assets/Travel.PNG';
+import Pitch from '../assets/Pitch.PNG';
+import Arcane from '../assets/Arcane.PNG';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -312,15 +314,32 @@ const Navbar = () => {
           </div>
           <div className='flex justify-center pt-8 px-2'> 
   <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
-    <img src={Travel} alt="Travel" className='h-36 md:h-110 xl:h-160 md:rounded-lg rounded-md'/>
+    <img src={Travel} alt="Travel" className='h-52 md:h-110 xl:h-160 md:rounded-lg rounded-md'/>
     <a href="https://www.figma.com/design/9FuKaQ7mMSWvbQ9BS3STwI/Booking-Web-Project?node-id=0-1&t=kXycYFXs88DXpVEh-1" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
+    --- View ---
+    </a>
+  </div>
+</div>
+
+<div className='flex justify-center pt-8 px-2'> 
+  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
+    <img src={Pitch} alt="Travel" className='h-52 md:h-96 xl:h-152 md:rounded-lg rounded-md'/>
+    <a href="https://www.figma.com/design/sln9zZXNL90aHj0j3tJeiy/Capabilities-deck-presentation-template?t=dzAU6PKlGh8fEQpM-1" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
+    --- View ---
+    </a>
+  </div>
+</div>
+<div className='flex justify-center pt-8 px-2'> 
+  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
+    <img src={Arcane} alt="Lux" className='h-52 md:h-110 xl:h-160 md:rounded-lg rounded-md'/>
+    <a href="https://www.figma.com/design/blFxaYfXeytES746tR9qjf/Arcane?node-id=0-1&t=S9JUiVZ3BsAOo6qr-1" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
       Live Demo
     </a>
   </div>
 </div>
           <div className='flex justify-center pt-8 px-2'> 
   <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
-    <img src={Lux} alt="Lux" className='h-36 md:h-80 xl:h-130 md:rounded-lg rounded-md'/>
+    <img src={Lux} alt="Lux" className='h-40 md:h-80 xl:h-130 md:rounded-lg rounded-md'/>
     <a href="https://miguelbesa24.github.io/Luxury-Presence---Project/" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
       Live Demo
     </a>
