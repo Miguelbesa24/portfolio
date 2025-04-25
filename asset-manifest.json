@@ -1,11 +1,13 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.42425a20.css",
-    "main.js": "/portfolio/static/js/main.65df010e.js",
+    "main.css": "/portfolio/static/css/main.22177551.css",
+    "main.js": "/portfolio/static/js/main.58f2b989.js",
     "static/media/myimage3.JPG": "/portfolio/static/media/myimage3.f82dbcc67a24efacc0b8.JPG",
     "static/media/Lux.PNG": "/portfolio/static/media/Lux.de03ee8fc90393edb63f.PNG",
+    "static/media/Arcane.PNG": "/portfolio/static/media/Arcane.ed40a74be77fdc12b922.PNG",
     "static/media/Travel.PNG": "/portfolio/static/media/Travel.78d1ec6e0f8fdad065b9.PNG",
     "static/media/system.jpg": "/portfolio/static/media/system.5455bd704e289260a0ed.jpg",
+    "static/media/Pitch.PNG": "/portfolio/static/media/Pitch.7fe037373da1cf5bfc4c.PNG",
     "static/media/coffee2.jpg": "/portfolio/static/media/coffee2.de92f92af557c51bfba0.jpg",
     "static/media/Shoes2.jpg": "/portfolio/static/media/Shoes2.8695021cd8b492b62f20.jpg",
     "static/media/coffee1.jpg": "/portfolio/static/media/coffee1.e2260da686d163b57325.jpg",
@@ -16,11 +18,11 @@
     "static/media/Logo.png": "/portfolio/static/media/Logo.bc16bcabac236c7ca538.png",
     "static/media/myimage.png": "/portfolio/static/media/myimage.9b37941c28b20435c546.png",
     "index.html": "/portfolio/index.html",
-    "main.42425a20.css.map": "/portfolio/static/css/main.42425a20.css.map",
-    "main.65df010e.js.map": "/portfolio/static/js/main.65df010e.js.map"
+    "main.22177551.css.map": "/portfolio/static/css/main.22177551.css.map",
+    "main.58f2b989.js.map": "/portfolio/static/js/main.58f2b989.js.map"
   },
   "entrypoints": [
-    "static/css/main.42425a20.css",
-    "static/js/main.65df010e.js"
+    "static/css/main.22177551.css",
+    "static/js/main.58f2b989.js"
   ]
 }
