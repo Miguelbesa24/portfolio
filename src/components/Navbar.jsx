@@ -7,6 +7,12 @@ import coffee3 from '../assets/coffee3.jpg';
 import Shoes1 from '../assets/Shoes1.jpg';
 import Shoes2 from '../assets/Shoes2.jpg';
 import Shoes3 from '../assets/Shoes3.jpg';
+import Unicornfluff from '../assets/Unicorn fluff.jpg';
+import american from '../assets/american elite.jpg';
+import ems from '../assets/EMS.jpg';
+import homepro from '../assets/HomePro.jpg';
+import internatonal from '../assets/International.jpg';
+import mrparty from '../assets/mr.party.jpg';
 import Logo from '../assets/Logo.png';
 import system from '../assets/system.jpg';
 import resume from '../assets/Besa_Resume.pdf';
@@ -187,7 +193,7 @@ const Navbar = () => {
                   <div className='pt-2  xl:pt-4 xl:px-4 xl:text-2xl'>Bachelor of Science in<br></br> Computer Science</div> 
                 </div>
               </div>
-              <div className='mt-4 xl:mt-8 text-justify px-4 md:px-8 xl:px-16 xl:text-2xl'>Hi, I'm Miguel Antonio Besa, a Computer Science graduate. I have a strong passion for Frontend Development and UI/UX Design. I am dedicated to continuous improvement in my field. I am eager to enhance my skills in both UI/UX designing and programming. My commitment to growth drives my learning and professional development.</div>
+              <div className='mt-4 xl:mt-8 text-justify px-4 md:px-8 xl:px-16 xl:text-2xl'>Hi, I’m Miguel Antonio Besa, a Computer Science graduate with a strong passion for Frontend Development and UI/UX Design. I specialize in web design using the DUDA CMS platform, where I create visually appealing and user-centered websites tailored to meet client needs. <br></br> <br></br>In addition to my design work, I offer freelance UI/UX design services using Figma, helping clients translate ideas into intuitive and engaging digital experiences. <br></br> <br></br>I also have experience in education, having worked as an instructor for IT, Computer Science, and BMMA students. In this role, I not only taught core concepts but also served as a thesis adviser, guiding students through the development and completion of their research projects.</div>
             </div>
           </div>
         </div>
@@ -235,120 +241,426 @@ const Navbar = () => {
                 </div>
                 <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
                   <CreateIcon fontSize='medium' className='mr-2' sx={{ fontSize: {  lg: '2rem', xl: '2.5rem' }}}/> 
-                  Illustrator
+                  Canva
+                </div>
+                  <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
+                  <CreateIcon fontSize='medium' className='mr-2' sx={{ fontSize: {  lg: '2rem', xl: '2.5rem' }}}/> 
+                  Duda
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="project" ref={projectRef} className={`w-full min-h-screen ${animatedSections.project ? 'popup-animation' : 'blank-state'}`}>
-        <div className='pt-10 px-4 md:px-0'>
-          <div className='text-gray-600 text-center text-lg xl:text-2xl'>My Recent</div>
-          <div className='font-semibold text-3xl md:text-5xl xl:text-7xl pt-2 text-center'>Projects</div>
-          
-          <div className="flex justify-center pt-8 md:px-6">
-  <div className="border border-gray-500 rounded-lg p-4 md:p-10 grid gap-6">
-    {/* Image Section */}
-    <div className="flex justify-center px-10  gap-4 md:gap-6">
-      <img
-        src={coffee1}
-        alt="UI design showcasing coffee menu 1"
-        className="rounded-xl xl:h-160 xl:w-80 md:h-96 md:w-44 h-52"
-      />
-      <img
-        src={coffee2}
-        alt="UI design showcasing coffee menu 2"
-        className="rounded-xl xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 "
-      />
-      <img
-        src={coffee3}
-        alt="UI design showcasing coffee menu 3"
-        className="rounded-xl xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 "
-      />
-    </div>
+      
+      <section
+  id="project"
+  ref={projectRef}
+  className={`w-full min-h-screen ${
+    animatedSections.project ? "popup-animation" : "blank-state"
+  }`}
+>
+ <div className="pt-10 px-4 md:px-8">
 
-    {/* Text Section */}
-    <div className="text-center lg:text-2xl text-xl font-semibold text-gray-800">
-      Coffee Shop App UI Design
-    </div>
+  {/* Heading */}
+  <div className="text-gray-600 text-center text-lg xl:text-2xl">
+    My Recent
   </div>
-</div>
-<div className="flex justify-center pt-8 md:px-6">
-  <div className="border border-gray-500 rounded-lg p-4 md:p-10 grid gap-6 bg-gray-100">
-    {/* Image Section */}
-    <div className="flex justify-center px-10 gap-4 md:gap-6">
-      <img
-        src={Shoes1}
-        alt="UI design showcasing coffee menu 1"
-        className="rounded-[20px] xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 object-cover"
-      />
-      <img
-        src={Shoes2}
-        alt="UI design showcasing coffee menu 2"
-        className="rounded-[20px] xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 object-cover"
-      />
-      <img
-        src={Shoes3}
-        alt="UI design showcasing coffee menu 3"
-        className="rounded-[20px] xl:h-160 xl:w-80 md:h-96 md:w-44 h-52 object-cover"
-      />
-    </div>
 
-    {/* Text Section */}
-    <div className="text-center lg:text-2xl text-xl font-semibold text-gray-800">
-      Shoes App UI Design
-    </div>
+  <div className="font-semibold text-3xl md:text-5xl xl:text-7xl pt-2 text-center">
+    Projects
   </div>
-</div>
 
-          <div className='flex justify-center pt-8 px-2'> 
-            <div className='border border-gray-500 grid-cols-2 rounded-lg p-4'>
-              <img src={system} alt="System" className=' h-52 md:h-96 xl:h-152'/>
+  {/* 3 Column Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 pt-14">
 
-              <div className="text-center lg:text-2xl text-xl font-semibold text-gray-800">
-                  System Dashboard UI Design
-                  </div>
-            </div>
-            
-          </div>
-          <div className='flex justify-center pt-8 px-2'> 
-  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
-    <img src={Travel} alt="Travel" className='h-52 md:h-110 xl:h-160 md:rounded-lg rounded-md'/>
-    <a href="https://www.figma.com/design/9FuKaQ7mMSWvbQ9BS3STwI/Booking-Web-Project?node-id=0-1&t=kXycYFXs88DXpVEh-1" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
-    --- View ---
-    </a>
-  </div>
-</div>
+    {/* Coffee Shop */}
+    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
 
-<div className='flex justify-center pt-8 px-2'> 
-  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
-    <img src={Pitch} alt="Travel" className='h-52 md:h-96 xl:h-152 md:rounded-lg rounded-md'/>
-    <a href="https://www.figma.com/design/sln9zZXNL90aHj0j3tJeiy/Capabilities-deck-presentation-template?t=dzAU6PKlGh8fEQpM-1" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
-    --- View ---
-    </a>
-  </div>
-</div>
-<div className='flex justify-center pt-8 px-2'> 
-  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
-    <img src={Arcane} alt="Lux" className='h-52 md:h-110 xl:h-160 md:rounded-lg rounded-md'/>
-    <a href="https://www.figma.com/design/blFxaYfXeytES746tR9qjf/Arcane?node-id=0-1&t=S9JUiVZ3BsAOo6qr-1" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
-      Live Demo
-    </a>
-  </div>
-</div>
-          <div className='flex justify-center pt-8 px-2'> 
-  <div className='flex flex-col border border-gray-500 items-center justify-center rounded-lg p-8'>
-    <img src={Lux} alt="Lux" className='h-40 md:h-80 xl:h-130 md:rounded-lg rounded-md'/>
-    <a href="https://miguelbesa24.github.io/Luxury-Presence---Project/" target="_blank" rel="noopener noreferrer" className="xl:text-2xl mt-4 border border-black text-black font-semibold py-2 xl:py-4 px-6 xl:px-8 rounded-full transition-colors duration-300 hover:bg-gray-800 hover:text-white">
-      Live Demo
-    </a>
-  </div>
-</div>
+      <div className="flex justify-center gap-3">
+        <img
+          src={coffee1}
+          alt="Coffee UI 1"
+          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
+        />
 
+        <img
+          src={coffee2}
+          alt="Coffee UI 2"
+          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
+        />
 
+        <img
+          src={coffee3}
+          alt="Coffee UI 3"
+          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
+        />
+      </div>
+
+      <div className="mt-6">
+        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+          Coffee Shop App UI Design
         </div>
-      </section>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Shoes */}
+    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+      <div className="flex justify-center gap-3">
+        <img
+          src={Shoes1}
+          alt="Shoes UI 1"
+          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
+        />
+
+        <img
+          src={Shoes2}
+          alt="Shoes UI 2"
+          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
+        />
+
+        <img
+          src={Shoes3}
+          alt="Shoes UI 3"
+          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
+        />
+      </div>
+
+      <div className="mt-6">
+        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+          Shoes App UI Design
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
+        </div>
+      </div>
+    </div>
+
+    {/* System */}
+    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+      <img
+        src={system}
+        alt="System"
+        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+      />
+
+      <div className="mt-6">
+        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+          System Dashboard UI Design
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Travel */}
+    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+      <img
+        src={Travel}
+        alt="Travel"
+        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+      />
+
+      <div className="mt-6">
+        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+          Travel Booking UI Design
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
+        </div>
+
+        <div className="flex justify-start mt-6">
+          <a
+            href="https://www.figma.com/design/9FuKaQ7mMSWvbQ9BS3STwI/Booking-Web-Project?node-id=0-1&t=kXycYFXs88DXpVEh-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Pitch */}
+    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+      <img
+        src={Pitch}
+        alt="Pitch"
+        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+      />
+
+      <div className="mt-6">
+        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+          Pitch Deck UI Design
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Template</span>
+        </div>
+
+        <div className="flex justify-start mt-6">
+          <a
+            href="https://www.figma.com/design/sln9zZXNL90aHj0j3tJeiy/Capabilities-deck-presentation-template?t=dzAU6PKlGh8fEQpM-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Arcane */}
+    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+      <img
+        src={Arcane}
+        alt="Arcane"
+        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+      />
+
+      <div className="mt-6">
+        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+          Arcane UI Design
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
+          <span className="border rounded-full px-4 py-1 text-sm">UX</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Prototype</span>
+        </div>
+
+        <div className="flex justify-start mt-6">
+          <a
+            href="https://www.figma.com/design/blFxaYfXeytES746tR9qjf/Arcane?node-id=0-1&t=S9JUiVZ3BsAOo6qr-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+          >
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+{/* Luxury */}
+<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+  <img
+    src={Lux}
+    alt="Luxury"
+    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+  />
+
+  <div className="mt-6">
+    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+      Luxury Presence Project
+    </div>
+
+    <div className="flex flex-wrap gap-2 mt-4">
+      <span className="border rounded-full px-4 py-1 text-sm">
+        Front-End Development
+      </span>
+      <span className="border rounded-full px-4 py-1 text-sm">
+        React JS
+      </span>
+      <span className="border rounded-full px-4 py-1 text-sm">
+        Tailwind CSS
+      </span>
+    </div>
+
+    <div className="flex justify-start mt-6">
+      <a
+        href="https://miguelbesa24.github.io/Luxury-Presence---Project/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+      >
+        Live Demo
+      </a>
+    </div>
+  </div>
+</div>
+
+{/* Unicorn Fluff */}
+<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+  <img
+    src={Unicornfluff}
+    alt="Unicorn Fluff"
+    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+  />
+
+  <div className="mt-6">
+    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+      Unicorn Fluff
+    </div>
+
+    <div className="flex flex-wrap gap-2 mt-4">
+      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
+    </div>
+
+    <div className="flex justify-start mt-6">
+      <a
+        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/28666f83?t=1771573963371"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+      >
+        Live Demo
+      </a>
+    </div>
+  </div>
+</div>
+
+{/* American Elite */}
+<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+  <img
+    src={american}
+    alt="American Elite Solution"
+    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+  />
+
+  <div className="mt-6">
+    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+      American Elite Solution
+    </div>
+
+    <div className="flex flex-wrap gap-2 mt-4">
+      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
+    </div>
+
+    <div className="flex justify-start mt-6">
+      <a
+        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/97873e6e?t=1771936546767"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+      >
+        Live Demo
+      </a>
+    </div>
+  </div>
+</div>
+
+{/* Mr Party */}
+<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+  <img
+    src={mrparty}
+    alt="Mr. Party Event Rental"
+    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+  />
+
+  <div className="mt-6">
+    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+      Mr. Party Event Rental
+    </div>
+
+    <div className="flex flex-wrap gap-2 mt-4">
+      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
+    </div>
+
+    <div className="flex justify-start mt-6">
+      <a
+        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/51b7b56e?t=1772777755256"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+      >
+        Live Demo
+      </a>
+    </div>
+  </div>
+</div>
+
+{/* EMS */}
+<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+  <img
+    src={ems}
+    alt="EMS Automotive"
+    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+  />
+
+  <div className="mt-6">
+    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+      EMS Automotive
+    </div>
+
+    <div className="flex flex-wrap gap-2 mt-4">
+      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
+    </div>
+
+    <div className="flex justify-start mt-6">
+      <a
+        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/9974efc7?t=1773642772000"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+      >
+        Live Demo
+      </a>
+    </div>
+  </div>
+</div>
+
+{/* International */}
+<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+  <img
+    src={internatonal}
+    alt="International Gold Diamond & Watch Exchange"
+    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+  />
+
+  <div className="mt-6">
+    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+      International Gold Diamond & Watch Exchange
+    </div>
+
+    <div className="flex flex-wrap gap-2 mt-4">
+      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
+    </div>
+
+    <div className="flex justify-start mt-6">
+      <a
+        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/86915b01?t=1766739457340"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+      >
+        Live Demo
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+</section>
       <section id="contact" ref={contactRef} className={`w-full min-h-fit py-10 ${animatedSections.contact ? 'popup-animation' : 'blank-state'}`}>
         <div className="pt-10 px-10 md:px-0">
           <div className="text-gray-600 text-center text-lg xl:text-2xl">Let's Get in Touch</div>
