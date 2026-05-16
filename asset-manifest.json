@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.09fcfde2.css",
-    "main.js": "/portfolio/static/js/main.11ef287c.js",
+    "main.js": "/portfolio/static/js/main.91d8ce9f.js",
     "static/media/myimage3.JPG": "/portfolio/static/media/myimage3.f82dbcc67a24efacc0b8.JPG",
+    "static/media/AUBC - Desktop.PNG": "/portfolio/static/media/AUBC - Desktop.ed9fff401d59b4f378f0.PNG",
     "static/media/Lux.PNG": "/portfolio/static/media/Lux.de03ee8fc90393edb63f.PNG",
     "static/media/Arcane.PNG": "/portfolio/static/media/Arcane.ed40a74be77fdc12b922.PNG",
     "static/media/Travel.PNG": "/portfolio/static/media/Travel.78d1ec6e0f8fdad065b9.PNG",
@@ -17,7 +18,6 @@
     "static/media/Besa_Resume.pdf": "/portfolio/static/media/Besa_Resume.053cc1053ab86db7922b.pdf",
     "static/media/Logo.png": "/portfolio/static/media/Logo.bc16bcabac236c7ca538.png",
     "static/media/myimage.png": "/portfolio/static/media/myimage.9b37941c28b20435c546.png",
-    "static/media/HomePro.jpg": "/portfolio/static/media/HomePro.dc8465cda51be7d94cc9.jpg",
     "static/media/International.jpg": "/portfolio/static/media/International.3521a4f4661cfe7308b8.jpg",
     "static/media/mr.party.jpg": "/portfolio/static/media/mr.party.8fa2251501159a70cbab.jpg",
     "static/media/EMS.jpg": "/portfolio/static/media/EMS.e0b5cc43acb4e96252cf.jpg",
@@ -25,10 +25,10 @@
     "static/media/Unicorn fluff.jpg": "/portfolio/static/media/Unicorn fluff.f80276736e32653195cc.jpg",
     "index.html": "/portfolio/index.html",
     "main.09fcfde2.css.map": "/portfolio/static/css/main.09fcfde2.css.map",
-    "main.11ef287c.js.map": "/portfolio/static/js/main.11ef287c.js.map"
+    "main.91d8ce9f.js.map": "/portfolio/static/js/main.91d8ce9f.js.map"
   },
   "entrypoints": [
     "static/css/main.09fcfde2.css",
-    "static/js/main.11ef287c.js"
+    "static/js/main.91d8ce9f.js"
   ]
 }
