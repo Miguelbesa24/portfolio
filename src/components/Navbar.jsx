@@ -10,7 +10,6 @@ import Shoes3 from '../assets/Shoes3.jpg';
 import Unicornfluff from '../assets/Unicorn fluff.jpg';
 import american from '../assets/american elite.jpg';
 import ems from '../assets/EMS.jpg';
-import homepro from '../assets/HomePro.jpg';
 import internatonal from '../assets/International.jpg';
 import mrparty from '../assets/mr.party.jpg';
 import Logo from '../assets/Logo.png';
@@ -28,6 +27,7 @@ import Lux from '../assets/Lux.PNG';
 import Travel from '../assets/Travel.PNG';
 import Pitch from '../assets/Pitch.PNG';
 import Arcane from '../assets/Arcane.PNG';
+import AUBC from '../assets/AUBC - Desktop.PNG';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -454,6 +454,42 @@ const Navbar = () => {
         <div className="flex justify-start mt-6">
           <a
             href="https://www.figma.com/design/blFxaYfXeytES746tR9qjf/Arcane?node-id=0-1&t=S9JUiVZ3BsAOo6qr-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+          >
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+     {/* AUBC */}
+    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+
+      <img
+        src={AUBC}
+        alt="AUBC"
+        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
+      />
+
+      <div className="mt-6">
+        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
+          AUBC Consulting 
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
+          <span className="border rounded-full px-4 py-1 text-sm">UX</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Prototype</span>
+          <span className="border rounded-full px-4 py-1 text-sm">Freelance</span>
+
+        </div>
+
+        <div className="flex justify-start mt-6">
+          <a
+            href="https://www.figma.com/design/Yu19sN1MFSKgXJbbHqbApD/AUBC---WEB-DESIGN?node-id=0-1&t=FO62itpzZscSCTjG-1"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
