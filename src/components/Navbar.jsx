@@ -29,6 +29,7 @@ import Pitch from '../assets/Pitch.PNG';
 import Arcane from '../assets/Arcane.PNG';
 import AUBC from '../assets/AUBC - Desktop.PNG';
 
+import emailjs from '@emailjs/browser';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [animatedSections, setAnimatedSections] = useState({
@@ -94,6 +95,20 @@ const Navbar = () => {
   const openPdf = () => {
     window.open(resume, '_blank');
   };
+
+  // Add this inside your Navbar component, in the useEffect block:
+useEffect(() => {
+  // Send notification on first visit
+  emailjs.send(
+    'service_ii72yxp',      // e.g. 'service_abc123'
+    'template_w7jl9qq',     // e.g. 'template_xyz456'
+    {
+      message: 'Someone just viewed your portfolio! 🎉',
+      time: new Date().toLocaleString(),
+    },
+    '4_lsLgy42sJjYQ1Mn'       // e.g. 'user_AbCdEfGhIj'
+  ).catch(err => console.log('Email error:', err));
+}, []); // Empty array = runs once on first load
 
   return (
     <div>
