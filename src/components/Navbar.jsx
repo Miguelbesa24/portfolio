@@ -14,7 +14,7 @@ import internatonal from '../assets/International.jpg';
 import mrparty from '../assets/mr.party.jpg';
 import Logo from '../assets/Logo.png';
 import system from '../assets/system.jpg';
-import resume from '../assets/Besa_Resume.pdf';
+import resume from '../assets/CV-Besa.pdf';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
