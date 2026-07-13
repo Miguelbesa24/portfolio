@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.09fcfde2.css",
-    "main.js": "/portfolio/static/js/main.2ad677c5.js",
+    "main.js": "/portfolio/static/js/main.3fff09ea.js",
     "static/media/myimage3.JPG": "/portfolio/static/media/myimage3.f82dbcc67a24efacc0b8.JPG",
     "static/media/AUBC - Desktop.PNG": "/portfolio/static/media/AUBC - Desktop.ed9fff401d59b4f378f0.PNG",
     "static/media/Lux.PNG": "/portfolio/static/media/Lux.de03ee8fc90393edb63f.PNG",
@@ -15,7 +15,7 @@
     "static/media/coffee3.jpg": "/portfolio/static/media/coffee3.f2fa33a881318447a032.jpg",
     "static/media/Shoes3.jpg": "/portfolio/static/media/Shoes3.e0c2b213e589cba15310.jpg",
     "static/media/Shoes1.jpg": "/portfolio/static/media/Shoes1.1b95e5e79724a3f0b746.jpg",
-    "static/media/Besa_Resume.pdf": "/portfolio/static/media/Besa_Resume.053cc1053ab86db7922b.pdf",
+    "static/media/CV-Besa.pdf": "/portfolio/static/media/CV-Besa.84805e6663c71497d3d8.pdf",
     "static/media/Logo.png": "/portfolio/static/media/Logo.bc16bcabac236c7ca538.png",
     "static/media/myimage.png": "/portfolio/static/media/myimage.9b37941c28b20435c546.png",
     "static/media/International.jpg": "/portfolio/static/media/International.3521a4f4661cfe7308b8.jpg",
@@ -25,10 +25,10 @@
     "static/media/Unicorn fluff.jpg": "/portfolio/static/media/Unicorn fluff.f80276736e32653195cc.jpg",
     "index.html": "/portfolio/index.html",
     "main.09fcfde2.css.map": "/portfolio/static/css/main.09fcfde2.css.map",
-    "main.2ad677c5.js.map": "/portfolio/static/js/main.2ad677c5.js.map"
+    "main.3fff09ea.js.map": "/portfolio/static/js/main.3fff09ea.js.map"
   },
   "entrypoints": [
     "static/css/main.09fcfde2.css",
-    "static/js/main.2ad677c5.js"
+    "static/js/main.3fff09ea.js"
   ]
 }
