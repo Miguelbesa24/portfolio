@@ -713,7 +713,7 @@ const Navbar = () => {
             </Reveal>
 
             <Reveal delay={150}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl bg-zinc-200 md:aspect-square">
+              <div className="group relative aspect-[4/3] overflow-hidden rounded-lg bg-zinc-200 md:aspect-square">
                 <img
                   src={myimage}
                   alt="Miguel Besa"
