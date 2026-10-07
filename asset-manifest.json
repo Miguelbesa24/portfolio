@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c6e87682.css",
-    "main.js": "/portfolio/static/js/main.f5ec84c9.js",
+    "main.css": "/portfolio/static/css/main.74923562.css",
+    "main.js": "/portfolio/static/js/main.e2ca409c.js",
     "static/media/myimage3.JPG": "/portfolio/static/media/myimage3.f82dbcc67a24efacc0b8.JPG",
     "static/media/AUBC - Desktop.PNG": "/portfolio/static/media/AUBC - Desktop.ed9fff401d59b4f378f0.PNG",
     "static/media/Lux.PNG": "/portfolio/static/media/Lux.de03ee8fc90393edb63f.PNG",
@@ -21,11 +21,11 @@
     "static/media/Unicorn fluff.jpg": "/portfolio/static/media/Unicorn fluff.f80276736e32653195cc.jpg",
     "static/media/Shoes1.jpg": "/portfolio/static/media/Shoes1.8120c59633c491c2eb5e.jpg",
     "index.html": "/portfolio/index.html",
-    "main.c6e87682.css.map": "/portfolio/static/css/main.c6e87682.css.map",
-    "main.f5ec84c9.js.map": "/portfolio/static/js/main.f5ec84c9.js.map"
+    "main.74923562.css.map": "/portfolio/static/css/main.74923562.css.map",
+    "main.e2ca409c.js.map": "/portfolio/static/js/main.e2ca409c.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6e87682.css",
-    "static/js/main.f5ec84c9.js"
+    "static/css/main.74923562.css",
+    "static/js/main.e2ca409c.js"
   ]
 }
