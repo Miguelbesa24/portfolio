@@ -881,7 +881,7 @@ const Navbar = () => {
             </p>
 
             <h2
-              className="mt-4 max-w-4xl text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
+              className="mt-4 max-w-4xl text-2xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-xl md:text-7xl"
               style={displayFont}
             >
               Let's build something exceptional together.
