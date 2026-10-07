@@ -1,739 +1,942 @@
 import React, { useState, useEffect, useRef } from 'react';
-import myimage from '../assets/myimage.png';
-import myimage3 from '../assets/myimage3.JPG';
-import coffee1 from '../assets/coffee1.jpg';
-import coffee2 from '../assets/coffee2.jpg';
-import coffee3 from '../assets/coffee3.jpg';
-import Shoes1 from '../assets/Shoes1.jpg';
-import Shoes2 from '../assets/Shoes2.jpg';
-import Shoes3 from '../assets/Shoes3.jpg';
-import Unicornfluff from '../assets/Unicorn fluff.jpg';
-import american from '../assets/american elite.jpg';
-import ems from '../assets/EMS.jpg';
-import internatonal from '../assets/International.jpg';
-import mrparty from '../assets/mr.party.jpg';
-import Logo from '../assets/Logo.png';
-import system from '../assets/system.jpg';
-import resume from '../assets/CV-Besa.pdf';
+import emailjs from '@emailjs/browser';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import CodeIcon from '@mui/icons-material/Code';
-import CreateIcon from '@mui/icons-material/Create';
-import SchoolIcon from '@mui/icons-material/School';
-import ComputerIcon from '@mui/icons-material/Computer';
-import EmailIcon from '@mui/icons-material/Email';
-import Lux from '../assets/Lux.PNG';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+
+import myimage from '../assets/myimage.png';
+import myimage3 from '../assets/myimage3.JPG';
+import Logo from '../assets/Logo.png';
+import resume from '../assets/CV-Besa.pdf';
+import certBesa from '../assets/Cert-Besa.png';
+
+import coffee1 from '../assets/coffee1.jpg';
+import Shoes1 from '../assets/Shoes1.jpg';
+import system from '../assets/system.jpg';
 import Travel from '../assets/Travel.PNG';
 import Pitch from '../assets/Pitch.PNG';
 import Arcane from '../assets/Arcane.PNG';
 import AUBC from '../assets/AUBC - Desktop.PNG';
+import Lux from '../assets/Lux.PNG';
+import Unicornfluff from '../assets/Unicorn fluff.jpg';
+import american from '../assets/american elite.jpg';
+import mrparty from '../assets/mr.party.jpg';
+import ems from '../assets/EMS.jpg';
+import internatonal from '../assets/International.jpg';
 
-import emailjs from '@emailjs/browser';
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [animatedSections, setAnimatedSections] = useState({
-    profile: false,
-    about: false,
-    skills: false,
-    project: false,
-    contact: false
-  });
-  const profileRef = useRef(null);
-  const aboutRef = useRef(null);
-  const skillsRef = useRef(null);
-  const projectRef = useRef(null);
-  const contactRef = useRef(null);
+/* ---------- Content ---------- */
+
+const projects = [
+  {
+    title: 'Coffee Shop App UI Design',
+    kind: 'Mobile UI',
+    category: 'UI/UX',
+    image: coffee1,
+    description:
+      'Mobile ordering app concept with a warm, easy-to-scan menu and a short path from browsing to checkout.',
+    tags: ['UI', 'Figma'],
+  },
+  {
+    title: 'Shoes App UI Design',
+    kind: 'E-commerce',
+    category: 'UI/UX',
+    image: Shoes1,
+    description:
+      'Shopping app interface focused on large product imagery, clear filters, and a simple cart flow.',
+    tags: ['UI', 'Figma'],
+  },
+  {
+    title: 'System Dashboard UI Design',
+    kind: 'Dashboard',
+    category: 'UI/UX',
+    image: system,
+    description:
+      'Admin dashboard layout that organizes data tables, status indicators, and key metrics in one view.',
+    tags: ['UI', 'Figma', 'Dashboard'],
+  },
+  {
+    title: 'Travel Booking UI Design',
+    kind: 'Booking',
+    category: 'UI/UX',
+    image: Travel,
+    description:
+      'Booking website design covering destination search, trip details, and a streamlined reservation form.',
+    tags: ['UI', 'Figma'],
+    link: 'https://www.figma.com/design/9FuKaQ7mMSWvbQ9BS3STwI/Booking-Web-Project?node-id=0-1&t=kXycYFXs88DXpVEh-1',
+    linkLabel: 'View project',
+  },
+  {
+    title: 'Pitch Deck UI Design',
+    kind: 'Presentation',
+    category: 'UI/UX',
+    image: Pitch,
+    description:
+      'Reusable capabilities deck template with consistent layouts for services, case studies, and team slides.',
+    tags: ['UI', 'Figma', 'Template'],
+    link: 'https://www.figma.com/design/sln9zZXNL90aHj0j3tJeiy/Capabilities-deck-presentation-template?t=dzAU6PKlGh8fEQpM-1',
+    linkLabel: 'View project',
+  },
+  {
+    title: 'Arcane UI Design',
+    kind: 'Prototype',
+    category: 'UI/UX',
+    image: Arcane,
+    description:
+      'Fan-inspired interface design with a dark visual theme, an interactive prototype, and custom components.',
+    tags: ['UI', 'UX', 'Prototype'],
+    link: 'https://www.figma.com/design/blFxaYfXeytES746tR9qjf/Arcane?node-id=0-1&t=S9JUiVZ3BsAOo6qr-1',
+    linkLabel: 'Open prototype',
+  },
+  {
+    title: 'AUBC Consulting',
+    kind: 'Freelance',
+    category: 'UI/UX',
+    image: AUBC,
+    description:
+      'Freelance website design for a consulting firm, from page structure to a clickable prototype.',
+    tags: ['UI', 'UX', 'Freelance'],
+    link: 'https://www.figma.com/design/Yu19sN1MFSKgXJbbHqbApD/AUBC---WEB-DESIGN?node-id=0-1&t=FO62itpzZscSCTjG-1',
+    linkLabel: 'Open prototype',
+  },
+  {
+    title: 'Luxury Presence Project',
+    kind: 'Real estate',
+    category: 'Frontend',
+    image: Lux,
+    description:
+      'Responsive real estate website built with React and Tailwind CSS, with a clean, image-led layout.',
+    tags: ['Frontend', 'React', 'Tailwind'],
+    link: 'https://miguelbesa24.github.io/Luxury-Presence---Project/',
+    linkLabel: 'Live demo',
+  },
+  {
+    title: 'Unicorn Fluff',
+    kind: 'Client site',
+    category: 'DUDA',
+    image: Unicornfluff,
+    description:
+      'Client website designed and built on the DUDA platform with custom sections and mobile-first layouts.',
+    tags: ['DUDA'],
+    link: 'https://townsquareinteractive.responsivewebsitebuilder.io/preview/28666f83?t=1771573963371',
+    linkLabel: 'Live demo',
+  },
+  {
+    title: 'American Elite Solution',
+    kind: 'Client site',
+    category: 'DUDA',
+    image: american,
+    description:
+      'Business website built on DUDA, with service pages and clear calls to action for new customers.',
+    tags: ['DUDA'],
+    link: 'https://townsquareinteractive.responsivewebsitebuilder.io/preview/97873e6e?t=1771936546767',
+    linkLabel: 'Live demo',
+  },
+  {
+    title: 'Mr. Party Event Rental',
+    kind: 'Client site',
+    category: 'DUDA',
+    image: mrparty,
+    description:
+      'Rental business website on DUDA, with a browsable catalog of items and a straightforward quote request.',
+    tags: ['DUDA'],
+    link: 'https://townsquareinteractive.responsivewebsitebuilder.io/preview/51b7b56e?t=1772777755256',
+    linkLabel: 'Live demo',
+  },
+  {
+    title: 'EMS Automotive',
+    kind: 'Client site',
+    category: 'DUDA',
+    image: ems,
+    description:
+      'Auto service website on DUDA, with services, location details, and booking prompts up front.',
+    tags: ['DUDA'],
+    link: 'https://townsquareinteractive.responsivewebsitebuilder.io/preview/9974efc7?t=1773642772000',
+    linkLabel: 'Live demo',
+  },
+  {
+    title: 'International Gold, Diamond & Watch Exchange',
+    kind: 'Client site',
+    category: 'DUDA',
+    image: internatonal,
+    description:
+      'Retail website on DUDA that presents buying and selling services with a polished, trustworthy look.',
+    tags: ['DUDA'],
+    link: 'https://townsquareinteractive.responsivewebsitebuilder.io/preview/86915b01?t=1766739457340',
+    linkLabel: 'Live demo',
+  },
+];
+
+const certificates = [{ title: 'UI Design Bootcamp', image: certBesa }];
+
+const filters = ['All', 'UI/UX', 'Frontend', 'DUDA'];
+
+const icon = (name) =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-original.svg`;
+
+const skills = [
+  { name: 'HTML', logo: icon('html5') },
+  { name: 'CSS', logo: icon('css3') },
+  { name: 'React.js', logo: icon('react') },
+  { name: 'Tailwind', logo: icon('tailwindcss') },
+  { name: 'Material UI', logo: icon('materialui') },
+  { name: 'Figma', logo: icon('figma') },
+  { name: 'Photoshop', logo: icon('photoshop') },
+  { name: 'Canva', logo: icon('canva') },
+  { name: 'Duda', logo: null },
+];
+
+const aboutFacts = [
+  ['College', 'STI College Ortigas-Cainta'],
+  ['Education', 'BS in Computer Science'],
+  ['Design', 'Websites on DUDA and freelance UI/UX in Figma'],
+  ['Teaching', 'Instructor for IT, CS, and BMMA, and thesis adviser'],
+];
+
+const navLinks = [
+  ['About', '#about'],
+  ['Skills', '#skills'],
+  ['Projects', '#project'],
+  ['Certificates', '#certificates'],
+  ['Contact', '#contact'],
+];
+
+const displayFont = {
+  fontFamily: "'Syne', 'Manrope', sans-serif",
+};
+
+/* ---------- Shared pieces ---------- */
+
+// Fades and lifts content in once, when it scrolls into view.
+const Reveal = ({ children, delay = 0, className = '' }) => {
+  const ref = useRef(null);
+  const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
+    const el = ref.current;
+    if (!el) return undefined;
 
-    const observerCallback = (entries) => {
-      entries.forEach(entry => {
+    if (
+      !('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      setShown(true);
+      return undefined;
+    }
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
         if (entry.isIntersecting) {
-          const section = entry.target.id;
-          setAnimatedSections(prevState => ({
-            ...prevState,
-            [section]: true
-          }));
+          setShown(true);
+          io.disconnect();
         }
-      });
-    };
+      },
+      { threshold: 0.12 }
+    );
 
-    const aboutObserver = new IntersectionObserver(observerCallback, observerOptions);
-    if (profileRef.current) {
-      aboutObserver.observe(profileRef.current);
-    }
-    if (aboutRef.current) {
-      aboutObserver.observe(aboutRef.current);
-    }
-    if (skillsRef.current) {
-      aboutObserver.observe(skillsRef.current);
-    }
-    if (projectRef.current) {
-      aboutObserver.observe(projectRef.current);
-    }
-    if (contactRef.current) {
-      aboutObserver.observe(contactRef.current);
-    }
+    io.observe(el);
 
-    return () => {
-      if (aboutObserver) {
-        aboutObserver.disconnect();
-      }
-    };
+    return () => io.disconnect();
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        shown
+          ? 'translate-y-0 opacity-100'
+          : 'translate-y-6 opacity-0'
+      } ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
 
-  const openPdf = () => {
-    window.open(resume, '_blank');
-  };
+const SectionHeading = ({
+  eyebrow,
+  title,
+  dark = false,
+  center = false,
+}) => (
+  <div className={`mb-12 md:mb-16 ${center ? 'text-center' : ''}`}>
+    <p
+      className={`text-sm ${
+        dark ? 'text-zinc-400' : 'text-zinc-500'
+      }`}
+    >
+      {eyebrow}
+    </p>
 
-  // Add this inside your Navbar component, in the useEffect block:
-useEffect(() => {
-  // Send notification on first visit
-  emailjs.send(
-    'service_ii72yxp',      // e.g. 'service_abc123'
-    'template_w7jl9qq',     // e.g. 'template_xyz456'
-    {
-      message: 'Someone just viewed your portfolio! 🎉',
-      time: new Date().toLocaleString(),
-    },
-    '4_lsLgy42sJjYQ1Mn'       // e.g. 'user_AbCdEfGhIj'
-  ).catch(err => console.log('Email error:', err));
-}, []); // Empty array = runs once on first load
+    <h2
+      className={`mt-2 text-3xl font-extrabold uppercase tracking-tight md:text-5xl ${
+        dark ? 'text-white' : 'text-zinc-900'
+      }`}
+      style={displayFont}
+    >
+      {title}
+    </h2>
+  </div>
+);
+
+const SkillTile = ({ name, logo }) => {
+  const [failed, setFailed] = useState(false);
 
   return (
-    <div>
-      <nav className="absolute w-full z-10 pt-4 md:pt-10 md:px-28 xl:px-44">
-        <div className="flex justify-between items-center max-w-8xl mx-auto ">
-          <div className="text-sm md:text-xl xl:text-4xl md:basis-1/4 text-center flex items-center text-gray-700">   <img src={Logo} alt='Logo' className=' w-12 h-12 md:w-16 md:h-16 xl:w-24 xl:h-24' /> Miguel Besa</div>
-          <div className="hidden md:flex space-x-10 xl:space-x-16 text-2xl xl:text-4xl">
-            <a href="#about" className="hover:text-gray-400 hover-underline-offset transition duration-100">About</a>
-            <a href="#skills" className="hover:text-gray-400 hover-underline-offset transition duration-100">Skills</a>
-            <a href="#project" className="hover:text-gray-400 hover-underline-offset transition duration-100">Project</a>
-            <a href="#contact" className="hover:text-gray-400 hover-underline-offset transition duration-100">Contact</a>
-          </div>
-          <div className="md:hidden pr-4">
-            <button onClick={toggleMenu} className="text-2xl focus:outline-none">
-              &#9776;
-            </button>
-          </div>
-        </div>
-      </nav>
-      {isOpen && (
-  <nav className="absolute top-0 right-0 w-3/4 h-auto bg-white shadow-md z-20">
-    <div className="flex flex-col p-6 text-xl h-full">
-      <button onClick={toggleMenu} className="self-end text-2xl font-bold mb-6">
-        &times;
-      </button>
-      <a href="#about" onClick={toggleMenu} className="mb-4">About</a>
-      <a href="#skills" onClick={toggleMenu} className="mb-4">Skills</a>
-      <a href="#project" onClick={toggleMenu} className="mb-4">Project</a>
-      <a href="#contact" onClick={toggleMenu} className="mb-4">Contact</a>
-    </div>
-  </nav>
-)}
+    <div className="group flex h-40 flex-col justify-between rounded-md border border-white/10 bg-white/5 p-4 shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-white/30 hover:bg-white/10">
+      <div className="flex flex-1 items-center justify-center">
+        {logo && !failed ? (
+          <img
+            src={logo}
+            alt=""
+            loading="lazy"
+            onError={() => setFailed(true)}
+            className="h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+        ) : (
+          <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 text-2xl font-bold text-white transition-transform duration-300 group-hover:scale-110">
+            {name[0]}
+          </span>
+        )}
+      </div>
 
-      <section id="profile" ref={profileRef} className={`w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-6 ${animatedSections.profile ? 'popup-animation' : 'blank-state'}`}>
-        <div className="flex flex-col items-center md:flex-row md:justify-center w-full">
-          <div className='w-full md:w-1/2 flex justify-center'>
-            <div className="w-64 h-96 md:w-64 md:h-96 xl:h-148 xl:w-96 overflow-hidden rounded-full  block mx-auto mb-4 md:mb-0 md:mr-8">
-              <img src={myimage3} alt='My Profile' className='w-full h-full object-cover' />
-            </div>
-          </div>
-          <div className="basis-1/2  flex justify-center">
-            <div className="text-center pt-10 md:pt-0 md:text-center md:text-xl md:max-w-lg xl:max-w-3xl">
-              <div className="text-md xl:text-2xl">Hello, I'm</div>
-              <div className="text-4xl xl:text-7xl md:text-5xl font-semibold ">Miguel Besa</div>
-              <div className="text-lg md:text-xl xl:text-4xl text-gray-600 mt-2">Frontend Web Developer | UI/UX Designer</div>
-              <div className="flex justify-center md:text-center mt-4 space-x-2">
-                <button onClick={openPdf} className="border-2 border-black rounded-full text-sm xl:text-2xl font-bold p-2 hover:bg-gray-800 hover:text-white">
-                  Download CV
-                </button>
-                <a href="https://www.linkedin.com/in/miguelbesa2420021214" target="_blank" rel="noopener noreferrer">
-  <IconButton 
-    size="small" 
-    sx={{
-      fontSize: { xs: 'small', sm: 'medium', md: 'large', lg: 'x-large', xl: 'xx-large' }
-    }}
+      <p className="text-sm text-zinc-300">{name}</p>
+    </div>
+  );
+};
+
+const ProjectCard = ({
+  project,
+  index,
+  centered = false,
+}) => (
+  <div
+    className={`group flex h-full flex-col rounded-md border border-zinc-200 bg-white p-4 transition-all duration-300 hover:-translate-y-2 hover:border-zinc-300 hover:shadow-2xl hover:shadow-zinc-900/10 ${
+      centered ? 'w-full max-w-md' : ''
+    }`}
   >
-    <LinkedInIcon 
-      sx={{
-        fontSize: { xs: '2rem', lg: '2.5rem', xl: '4rem' }
-      }} 
-    />
-  </IconButton>
-</a>
+    <div className="flex items-center justify-between px-1 pb-4 pt-1 text-xs text-zinc-500">
+      <span>{project.kind}</span>
 
-                <IconButton size="small"  ><GitHubIcon  sx={{
-        fontSize: { xs: '2rem', lg: '2.5rem', xl: '4rem' }
-      }}  /></IconButton>
-              </div>
-            </div>
-          </div>
+      {project.category && (
+        <span className="rounded-md bg-zinc-100 px-2 py-1 font-medium text-zinc-600">
+          {project.category}
+        </span>
+      )}
+    </div>
+
+    <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-100">
+      <img
+        src={project.image}
+        alt={project.title}
+        loading="lazy"
+        className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+          centered
+            ? 'object-contain'
+            : 'object-cover object-top'
+        }`}
+      />
+    </div>
+
+    <div className="flex flex-1 flex-col px-1 pb-1 pt-5">
+      <h3 className="text-base font-bold leading-snug text-zinc-900 md:text-lg">
+        {project.title}
+      </h3>
+
+      {project.description && (
+        <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+          {project.description}
+        </p>
+      )}
+
+      {project.tags && (
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-zinc-100 pt-4">
+          <span className="mt-4 text-xs text-zinc-500">
+            {project.tags.join(' • ')}
+          </span>
+
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex shrink-0 items-center gap-1 text-xs font-bold text-zinc-900 transition-all hover:gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-900"
+            >
+              {project.linkLabel}
+              <ArrowOutwardIcon sx={{ fontSize: 14 }} />
+            </a>
+          )}
         </div>
-      </section>
-      <section id="about" ref={aboutRef} className={`w-full min-h-screen ${animatedSections.about ? 'popup-animation' : 'blank-state'}`}>
-        <div className='text-center pt-10'>
-          <div className='text-gray-600 xl:text-2xl'>Get to know more</div>
-          <div className='font-semibold text-3xl md:text-5xl pt-2 xl:text-7xl'>About me</div>
-          <div className='grid grid-cols-1 md:grid-cols-2 pt-10 xl:pt-16 w-full'>
-            <div className="w-full flex justify-center md:justify-end">
-              <div className="w-48 h-48 md:w-96 md:h-96 xl:w-140 xl:h-140 overflow-hidden rounded-lg mb-4 md:mb-0 md:mr-8">
-                <img src={myimage} alt='My Profile' className='w-full h-full object-cover' />
-              </div>
-            </div>
-            <div className="flex flex-col items-center text-center px-4 md:px-0">
-              <div className='grid md:grid-cols-2 gap-4'>
-                <div className='border border-black rounded-lg w-auto h-auto py-4 px-2'>
-                  <SchoolIcon  sx={{
-        fontSize: {  lg: '2.5rem', xl: '3.5rem' }
-      }} />
-                  <div className='font-semibold text-xl pt-2 xl:pt-4 xl:text-3xl'>College</div>
-                  <div className='pt-2 xl:pt-4 xl:text-2xl'>STI College<br></br>Ortigas-Cainta</div> 
-                </div>
-                <div className='border border-black rounded-lg w-auto h-auto py-4 px-2'>
-                  <ComputerIcon sx={{
-        fontSize: {  lg: '2.5rem', xl: '3.5rem' }
-      }}/> 
-                  <div className='font-semibold text-xl pt-2  xl:pt-4 xl:text-3xl'>Education</div>
-                  <div className='pt-2  xl:pt-4 xl:px-4 xl:text-2xl'>Bachelor of Science in<br></br> Computer Science</div> 
-                </div>
-              </div>
-              <div className='mt-4 xl:mt-8 text-justify px-4 md:px-8 xl:px-16 xl:text-2xl'>Hi, I’m Miguel Antonio Besa, a Computer Science graduate with a strong passion for Frontend Development and UI/UX Design. I specialize in web design using the DUDA CMS platform, where I create visually appealing and user-centered websites tailored to meet client needs. <br></br> <br></br>In addition to my design work, I offer freelance UI/UX design services using Figma, helping clients translate ideas into intuitive and engaging digital experiences. <br></br> <br></br>I also have experience in education, having worked as an instructor for IT, Computer Science, and BMMA students. In this role, I not only taught core concepts but also served as a thesis adviser, guiding students through the development and completion of their research projects.</div>
-            </div>
+      )}
+    </div>
+  </div>
+);
+
+const ContactLink = ({
+  label,
+  text,
+  href,
+  onClick,
+  down,
+}) => {
+  const Tag = href ? 'a' : 'button';
+
+  return (
+    <Tag
+      href={href}
+      onClick={onClick}
+      target={href ? '_blank' : undefined}
+      rel={href ? 'noopener noreferrer' : undefined}
+      className="group flex w-full items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/[0.07]"
+    >
+      <span>
+        <span className="block text-xs text-zinc-500">
+          {label}
+        </span>
+
+        <span className="mt-1 block font-semibold text-white">
+          {text}
+        </span>
+      </span>
+
+      {down ? (
+        <ArrowDownwardIcon
+          sx={{ fontSize: 18, color: '#a1a1aa' }}
+          className="transition-transform duration-300 group-hover:translate-y-0.5"
+        />
+      ) : (
+        <ArrowOutwardIcon
+          sx={{ fontSize: 18, color: '#a1a1aa' }}
+          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        />
+      )}
+    </Tag>
+  );
+};
+
+/* ---------- Page ---------- */
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [filter, setFilter] = useState('All');
+
+  const visibleProjects =
+    filter === 'All'
+      ? projects
+      : projects.filter((p) => p.category === filter);
+
+  useEffect(() => {
+    emailjs
+      .send(
+        'service_ii72yxp',
+        'template_w7jl9qq',
+        {
+          message: 'Someone just viewed your portfolio! 🎉',
+          time: new Date().toLocaleString(),
+        },
+        '4_lsLgy42sJjYQ1Mn'
+      )
+      .catch((err) => console.log('Email error:', err));
+  }, []);
+
+  const openPdf = () => window.open(resume, '_blank');
+
+  return (
+    <div
+      className="bg-white text-zinc-900 antialiased"
+      style={{
+        fontFamily: "'Manrope', system-ui, sans-serif",
+      }}
+    >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        section[id] {
+          scroll-margin-top: 4rem;
+        }
+
+        @keyframes heroIn {
+          from {
+            opacity: 0;
+            transform: translateY(14px);
+          }
+
+          to {
+            opacity: 1;
+            transform: none;
+          }
+        }
+
+        .hero-in > * {
+          animation: heroIn .8s ease-out both;
+        }
+
+        .hero-in > *:nth-child(2) {
+          animation-delay: .1s;
+        }
+
+        .hero-in > *:nth-child(3) {
+          animation-delay: .2s;
+        }
+
+        .hero-in > *:nth-child(4) {
+          animation-delay: .3s;
+        }
+
+        .hero-in > *:nth-child(5) {
+          animation-delay: .4s;
+        }
+
+        .nav-link {
+          position: relative;
+        }
+
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 1px;
+          width: 100%;
+          background: currentColor;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform .3s ease;
+        }
+
+        .nav-link:hover::after {
+          transform: scaleX(1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .hero-in > * {
+            animation: none;
+          }
+
+          html {
+            scroll-behavior: auto;
+          }
+
+          * {
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `}</style>
+
+      {/* Navigation */}
+      <header className="fixed inset-x-0 top-0 z-30 border-b border-white/10 bg-zinc-950/70 text-white backdrop-blur">
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          <a
+            href="#profile"
+            className="flex items-center gap-3 text-sm font-semibold"
+          >
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-9 w-9 object-contain"
+            />
+            Miguel Besa
+          </a>
+
+          <div className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
+            {navLinks.map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className="nav-link transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              >
+                {label}
+              </a>
+            ))}
           </div>
-        </div>
-      </section>
-      <section id="skills" ref={skillsRef} className={`w-full min-h-screen ${animatedSections.skills ? 'popup-animation' : 'blank-state'}`}>
-        <div className='pt-10 px-4 md:px-0'>
-        <div className="text-gray-600 text-center text-lg xl:text-2xl">My</div>
-          <div className='font-semibold text-3xl md:text-5xl xl:text-7xl pt-2 text-center'>Skills</div>
-          <div className={`flex flex-col md:flex-row justify-center pt-10 w-full gap-10 ${animatedSections.skills ? 'popup-animation' : ''}`}>
-            <div className="w-auto md:w-120 xl:w-160 h-auto overflow-hidden rounded-lg border border-gray-500 m-4 px-4 md:px-0 xl:py-10">
-              <div className='pt-8 text-xl md:text-3xl xl:text-5xl font-semibold text-gray-600 text-center'>Frontend Development</div>
-              <div className='grid md:grid-cols-2 gap-4 py-8 md:px-20 '>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CodeIcon className='mr-2' sx={{ fontSize: {  lg: '2.5rem', xl: '3rem' }}}/> 
-                  HTML 
-                </div>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CodeIcon fontSize='large' className='mr-2'  sx={{ fontSize: {  lg: '2.5rem', xl: '3rem' }}}/> 
-                  CSS 
-                </div>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CodeIcon fontSize='large' className='mr-2'  sx={{ fontSize: {  lg: '2.5rem', xl: '3rem' }}}/> 
-                  Reactjs
-                </div>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CodeIcon fontSize='large' className='mr-2'  sx={{ fontSize: {  lg: '2.5rem', xl: '3rem' }}}/> 
-                  Tailwind
-                </div>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CodeIcon fontSize='large' className='mr-2' sx={{ fontSize: {  lg: '2.5rem', xl: '3rem' }}}/> 
-                  Material Ui
-                </div>
-              </div>
-            </div>
-            <div className="w-auto md:w-120 xl:w-160 h-auto overflow-hidden rounded-lg border border-gray-500 m-4 px-4 md:px-0 xl:py-10">
-              <div className='pt-8 text-xl md:text-3xl xl:text-5xl font-semibold text-gray-600 text-center'>UI/UX Design</div> 
-              <div className='grid md:grid-cols-2 gap-4 py-8 px-4 md:px-24'>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CreateIcon fontSize='medium' className='mr-2'  sx={{ fontSize: {  lg: '2rem', xl: '2.5rem' }}}/> 
-                  Figma 
-                </div>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CreateIcon fontSize='medium' className='mr-2' sx={{ fontSize: {  lg: '2rem', xl: '2.5rem' }}}/> 
-                  Photoshop
-                </div>
-                <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CreateIcon fontSize='medium' className='mr-2' sx={{ fontSize: {  lg: '2rem', xl: '2.5rem' }}}/> 
-                  Canva
-                </div>
-                  <div className='py-2 font-semibold text-lg xl:text-2xl flex items-center justify-center md:justify-start'> 
-                  <CreateIcon fontSize='medium' className='mr-2' sx={{ fontSize: {  lg: '2rem', xl: '2.5rem' }}}/> 
-                  Duda
-                </div>
-              </div>
-            </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-2xl leading-none md:hidden"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? '\u00D7' : '\u2630'}
+          </button>
+        </nav>
+
+        {isOpen && (
+          <div className="border-t border-white/10 bg-zinc-950 px-6 py-4 md:hidden">
+            {navLinks.map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setIsOpen(false)}
+                className="block py-3 text-zinc-200"
+              >
+                {label}
+              </a>
+            ))}
           </div>
-        </div>
-      </section>
-      
+        )}
+      </header>
+
+      {/* Hero */}
       <section
-  id="project"
-  ref={projectRef}
-  className={`w-full min-h-screen ${
-    animatedSections.project ? "popup-animation" : "blank-state"
-  }`}
->
- <div className="pt-10 px-4 md:px-8">
-
-  {/* Heading */}
-  <div className="text-gray-600 text-center text-lg xl:text-2xl">
-    My Recent
-  </div>
-
-  <div className="font-semibold text-3xl md:text-5xl xl:text-7xl pt-2 text-center">
-    Projects
-  </div>
-
-  {/* 3 Column Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 pt-14">
-
-    {/* Coffee Shop */}
-    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-      <div className="flex justify-center gap-3">
+        id="profile"
+        className="relative isolate flex min-h-screen items-end overflow-hidden bg-zinc-950 text-white"
+      >
         <img
-          src={coffee1}
-          alt="Coffee UI 1"
-          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
+          src={myimage3}
+          alt="Miguel Besa"
+          className="absolute inset-y-0 right-0 -z-10 h-full w-full object-cover object-top opacity-60 grayscale md:w-3/5"
+          style={{
+            WebkitMaskImage:
+              'linear-gradient(to left, black 40%, transparent 100%)',
+            maskImage:
+              'linear-gradient(to left, black 40%, transparent 100%)',
+          }}
         />
 
-        <img
-          src={coffee2}
-          alt="Coffee UI 2"
-          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
-        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
 
-        <img
-          src={coffee3}
-          alt="Coffee UI 3"
-          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
-        />
-      </div>
+        <div className="hero-in mx-auto w-full max-w-6xl px-6 pb-24 pt-32 md:pb-28">
+          <p className="text-lg text-zinc-400">
+            Miguel Antonio
+          </p>
 
-      <div className="mt-6">
-        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-          Coffee Shop App UI Design
-        </div>
-
-        <div className="flex flex-wrap gap-2 mt-4">
-          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
-        </div>
-      </div>
-    </div>
-
-    {/* Shoes */}
-    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-      <div className="flex justify-center gap-3">
-        <img
-          src={Shoes1}
-          alt="Shoes UI 1"
-          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
-        />
-
-        <img
-          src={Shoes2}
-          alt="Shoes UI 2"
-          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
-        />
-
-        <img
-          src={Shoes3}
-          alt="Shoes UI 3"
-          className="rounded-2xl h-44 md:h-64 xl:h-80 object-cover"
-        />
-      </div>
-
-      <div className="mt-6">
-        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-          Shoes App UI Design
-        </div>
-
-        <div className="flex flex-wrap gap-2 mt-4">
-          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
-        </div>
-      </div>
-    </div>
-
-    {/* System */}
-    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-      <img
-        src={system}
-        alt="System"
-        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-      />
-
-      <div className="mt-6">
-        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-          System Dashboard UI Design
-        </div>
-
-        <div className="flex flex-wrap gap-2 mt-4">
-          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
-        </div>
-      </div>
-    </div>
-
-    {/* Travel */}
-    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-      <img
-        src={Travel}
-        alt="Travel"
-        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-      />
-
-      <div className="mt-6">
-        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-          Travel Booking UI Design
-        </div>
-
-        <div className="flex flex-wrap gap-2 mt-4">
-          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
-        </div>
-
-        <div className="flex justify-start mt-6">
-          <a
-            href="https://www.figma.com/design/9FuKaQ7mMSWvbQ9BS3STwI/Booking-Web-Project?node-id=0-1&t=kXycYFXs88DXpVEh-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+          <h1
+            className="mt-2 font-extrabold leading-[0.85] tracking-tighter"
+            style={{
+              ...displayFont,
+              fontSize: 'clamp(4rem, 15vw, 10rem)',
+            }}
           >
-            View Project
-          </a>
-        </div>
-      </div>
-    </div>
+            BESA
+          </h1>
 
-    {/* Pitch */}
-    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+          <p className="mt-6 text-lg text-zinc-200 md:text-2xl">
+            Frontend Web Developer and UI/UX Designer
+          </p>
 
-      <img
-        src={Pitch}
-        alt="Pitch"
-        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-      />
+          <p className="mt-3 max-w-md text-zinc-400">
+            I design and build clean, user-centered websites with
+            React, Figma, and DUDA.
+          </p>
 
-      <div className="mt-6">
-        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-          Pitch Deck UI Design
-        </div>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="#project"
+              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              View projects
+            </a>
 
-        <div className="flex flex-wrap gap-2 mt-4">
-          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Template</span>
-        </div>
+            <button
+              onClick={openPdf}
+              className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Download CV
+            </button>
 
-        <div className="flex justify-start mt-6">
-          <a
-            href="https://www.figma.com/design/sln9zZXNL90aHj0j3tJeiy/Capabilities-deck-presentation-template?t=dzAU6PKlGh8fEQpM-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-          >
-            View Project
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {/* Arcane */}
-    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-      <img
-        src={Arcane}
-        alt="Arcane"
-        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-      />
-
-      <div className="mt-6">
-        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-          Arcane UI Design
+            <a
+              href="https://www.linkedin.com/in/miguelbesa2420021214"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <IconButton
+                size="small"
+                sx={{ color: 'white' }}
+              >
+                <LinkedInIcon />
+              </IconButton>
+            </a>
+          </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 mt-4">
-          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
-          <span className="border rounded-full px-4 py-1 text-sm">UX</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Prototype</span>
-        </div>
+        {/* Fade to black into the next section */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
+      </section>
 
-        <div className="flex justify-start mt-6">
-          <a
-            href="https://www.figma.com/design/blFxaYfXeytES746tR9qjf/Arcane?node-id=0-1&t=S9JUiVZ3BsAOo6qr-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-          >
-            Live Demo
-          </a>
-        </div>
-      </div>
-    </div>
-
-     {/* AUBC */}
-    <div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-      <img
-        src={AUBC}
-        alt="AUBC"
-        className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-      />
-
-      <div className="mt-6">
-        <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-          AUBC Consulting 
-        </div>
-
-        <div className="flex flex-wrap gap-2 mt-4">
-          <span className="border rounded-full px-4 py-1 text-sm">UI</span>
-          <span className="border rounded-full px-4 py-1 text-sm">UX</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Figma</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Prototype</span>
-          <span className="border rounded-full px-4 py-1 text-sm">Freelance</span>
-
-        </div>
-
-        <div className="flex justify-start mt-6">
-          <a
-            href="https://www.figma.com/design/Yu19sN1MFSKgXJbbHqbApD/AUBC---WEB-DESIGN?node-id=0-1&t=FO62itpzZscSCTjG-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-          >
-            Live Demo
-          </a>
-        </div>
-      </div>
-    </div>
-{/* Luxury */}
-<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-  <img
-    src={Lux}
-    alt="Luxury"
-    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-  />
-
-  <div className="mt-6">
-    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-      Luxury Presence Project
-    </div>
-
-    <div className="flex flex-wrap gap-2 mt-4">
-      <span className="border rounded-full px-4 py-1 text-sm">
-        Front-End Development
-      </span>
-      <span className="border rounded-full px-4 py-1 text-sm">
-        React JS
-      </span>
-      <span className="border rounded-full px-4 py-1 text-sm">
-        Tailwind CSS
-      </span>
-    </div>
-
-    <div className="flex justify-start mt-6">
-      <a
-        href="https://miguelbesa24.github.io/Luxury-Presence---Project/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
+      {/* About */}
+      <section
+        id="about"
+        className="relative bg-white pb-24 pt-40"
       >
-        Live Demo
-      </a>
-    </div>
-  </div>
-</div>
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black to-transparent" />
 
-{/* Unicorn Fluff */}
-<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+        <div className="relative mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2
+              className="mb-14 text-center text-4xl font-extrabold uppercase tracking-tight md:text-6xl"
+              style={displayFont}
+            >
+              About me
+            </h2>
+          </Reveal>
 
-  <img
-    src={Unicornfluff}
-    alt="Unicorn Fluff"
-    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-  />
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            <Reveal>
+              <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+                {aboutFacts.map(([label, text]) => (
+                  <div
+                    key={label}
+                    className="border-t border-zinc-900 pt-3"
+                  >
+                    <p className="text-lg font-bold">
+                      {label}
+                    </p>
 
-  <div className="mt-6">
-    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-      Unicorn Fluff
-    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-zinc-500">
+                      {text}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
-    <div className="flex flex-wrap gap-2 mt-4">
-      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
-    </div>
+              <div className="mt-10 max-w-prose space-y-4 leading-relaxed text-zinc-600">
+                <p>
+                  Hi, I'm Miguel Antonio Besa, a Computer Science
+                  graduate with a strong passion for Frontend
+                  Development and UI/UX Design. I create visually
+                  appealing, user-centered websites tailored to
+                  client needs.
+                </p>
 
-    <div className="flex justify-start mt-6">
-      <a
-        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/28666f83?t=1771573963371"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-      >
-        Live Demo
-      </a>
-    </div>
-  </div>
-</div>
+                <p>
+                  I also guide students as an instructor and thesis
+                  adviser, helping them develop and complete their
+                  research projects.
+                </p>
+              </div>
+            </Reveal>
 
-{/* American Elite */}
-<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
+            <Reveal delay={150}>
+              <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl bg-zinc-200 md:aspect-square">
+                <img
+                  src={myimage}
+                  alt="Miguel Besa"
+                  className="h-full w-full rounded-lg transition-transform duration-700 group-hover:scale-105"
+                />
 
-  <img
-    src={american}
-    alt="American Elite Solution"
-    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-  />
-
-  <div className="mt-6">
-    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-      American Elite Solution
-    </div>
-
-    <div className="flex flex-wrap gap-2 mt-4">
-      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
-    </div>
-
-    <div className="flex justify-start mt-6">
-      <a
-        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/97873e6e?t=1771936546767"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-      >
-        Live Demo
-      </a>
-    </div>
-  </div>
-</div>
-
-{/* Mr Party */}
-<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-  <img
-    src={mrparty}
-    alt="Mr. Party Event Rental"
-    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-  />
-
-  <div className="mt-6">
-    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-      Mr. Party Event Rental
-    </div>
-
-    <div className="flex flex-wrap gap-2 mt-4">
-      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
-    </div>
-
-    <div className="flex justify-start mt-6">
-      <a
-        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/51b7b56e?t=1772777755256"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-      >
-        Live Demo
-      </a>
-    </div>
-  </div>
-</div>
-
-{/* EMS */}
-<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-  <img
-    src={ems}
-    alt="EMS Automotive"
-    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-  />
-
-  <div className="mt-6">
-    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-      EMS Automotive
-    </div>
-
-    <div className="flex flex-wrap gap-2 mt-4">
-      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
-    </div>
-
-    <div className="flex justify-start mt-6">
-      <a
-        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/9974efc7?t=1773642772000"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-      >
-        Live Demo
-      </a>
-    </div>
-  </div>
-</div>
-
-{/* International */}
-<div className="border border-gray-300 rounded-[35px] p-6 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] group">
-
-  <img
-    src={internatonal}
-    alt="International Gold Diamond & Watch Exchange"
-    className="rounded-2xl h-52 md:h-80 xl:h-96 w-full object-cover"
-  />
-
-  <div className="mt-6">
-    <div className="text-left text-xl xl:text-2xl font-semibold text-gray-800">
-      International Gold Diamond & Watch Exchange
-    </div>
-
-    <div className="flex flex-wrap gap-2 mt-4">
-      <span className="border rounded-full px-4 py-1 text-sm">DUDA</span>
-    </div>
-
-    <div className="flex justify-start mt-6">
-      <a
-        href="https://townsquareinteractive.responsivewebsitebuilder.io/preview/86915b01?t=1766739457340"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border border-black text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white"
-      >
-        Live Demo
-      </a>
-    </div>
-  </div>
-</div>
-
-
-  </div>
-</div>
-</section>
-      <section id="contact" ref={contactRef} className={`w-full min-h-fit py-10 ${animatedSections.contact ? 'popup-animation' : 'blank-state'}`}>
-        <div className="pt-10 px-10 md:px-0">
-          <div className="text-gray-600 text-center text-lg xl:text-2xl">Let's Get in Touch</div>
-          <div className="font-semibold text-3xl md:text-5xl pt-2 text-center xl:text-6xl">Contact Me</div>
-          <div className="flex flex-col md:flex-row text-center items-center justify-center pt-10">
-            <div className="px-4 mb-4 md:mb-0 hover:text-gray-400 hover-underline-offset transition duration-100">
-              <a href="https://mail.google.com/mail/?view=cm&to=miguelbesa249@gmail.com&su&body" className="flex items-center justify-center xl:text-2xl ">
-                <EmailIcon  sx={{ fontSize: {  lg: '2.5rem', xl: '3.5rem' }}} className="mr-2" /> 
-                miguelbesa249@gmail.com
-              </a>
-            </div>
-            <div className="px-4 hover:text-gray-400 hover-underline-offset transition duration-100">
-              <a href="https://www.linkedin.com/in/miguelbesa2420021214" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center xl:text-2xl">
-                <LinkedInIcon sx={{ fontSize: {  lg: '2.5rem', xl: '3.5rem' }}} /> 
-                LinkedIn
-              </a>
-            </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
-      <footer className="text-gray-500 text-center py-4 px-4 text-xs md:text-lg xl:text-2xl">
-        Copyright © 2024 Miguel Antonio Besa. All Rights Reserved.
+
+      {/* Skills */}
+      <section
+        id="skills"
+        className="bg-zinc-950 py-24 text-white"
+      >
+        <div className="mx-auto max-w-5xl px-6">
+          <Reveal>
+            <SectionHeading
+              dark
+              center
+              eyebrow="Tools and technologies"
+              title="My skills"
+            />
+
+            <p className="-mt-8 mb-12 text-center text-zinc-300 md:-mt-12">
+              Building interfaces with HTML, CSS, React, Tailwind,
+              and Material UI, and designing them in Figma,
+              Photoshop, Canva, and DUDA.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {skills.map((s, i) => (
+              <Reveal
+                key={s.name}
+                delay={(i % 3) * 100}
+              >
+                <SkillTile {...s} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section
+        id="project"
+        className="bg-white py-24"
+      >
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <div className="mb-10 flex flex-col gap-4 border-b border-zinc-200 pb-8 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm text-zinc-500">
+                  My Recent
+                </p>
+
+                <h2
+                  className="mt-2 text-4xl font-extrabold uppercase tracking-tight md:text-6xl"
+                  style={displayFont}
+                >
+                  Projects
+                </h2>
+              </div>
+
+              <p className="max-w-xs text-sm text-zinc-500">
+                Showcasing {projects.length} projects across UI/UX
+                design, React development, and DUDA websites.
+              </p>
+            </div>
+
+            <div
+              className="mb-10 flex flex-wrap gap-2"
+              role="group"
+              aria-label="Filter projects"
+            >
+              {filters.map((f) => (
+                <button
+                  key={f}
+                  onClick={() => setFilter(f)}
+                  aria-pressed={filter === f}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                    filter === f
+                      ? 'bg-zinc-900 text-white'
+                      : 'border border-zinc-300 text-zinc-600 hover:-translate-y-0.5 hover:border-zinc-900'
+                  }`}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+          </Reveal>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleProjects.map((p, i) => (
+              <Reveal
+                key={`${filter}-${p.title}`}
+                delay={(i % 3) * 100}
+                className="h-full"
+              >
+                <ProjectCard
+                  project={p}
+                  index={i}
+                />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates */}
+      <section
+        id="certificates"
+        className="relative bg-white pb-80 pt-8"
+      >
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <SectionHeading
+              center
+              eyebrow="Learning and training"
+              title="Certificates"
+            />
+          </Reveal>
+
+          <div className="flex justify-center">
+            {certificates.map((c) => (
+              <Reveal
+                key={c.title}
+                className="flex w-full justify-center"
+              >
+                <ProjectCard
+                  centered
+                  project={{
+                    title: c.title,
+                    image: c.image,
+                    kind: 'Certificate',
+                  }}
+                />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        {/* Fade to black, leading into the footer */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-b from-transparent to-[#0a0a0a]" />
+      </section>
+
+      {/* Contact / footer */}
+      <footer
+        id="contact"
+        className="bg-[#0a0a0a] pb-10 text-white"
+      >
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <div className="flex items-center justify-between border-b border-white/10 pb-5 text-xs text-zinc-500">
+            
+               
+            </div>
+
+            <p className="mt-16 text-xs text-zinc-400">
+              Get in touch 
+            </p>
+
+            <h2
+              className="mt-4 max-w-4xl text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
+              style={displayFont}
+            >
+              Let's build something exceptional together.
+            </h2>
+
+            <p className="mt-8 max-w-xl leading-relaxed text-zinc-400">
+              Whether you need a high-performance frontend build
+              in React, a thoughtful UI/UX prototype in Figma, or
+              a complete website on DUDA, I'm ready to collaborate.
+            </p>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <div className="mt-12 flex flex-col gap-5 rounded-xl border border-white/10 bg-white/[0.03] p-6 sm:flex-row sm:items-center sm:justify-between md:p-8">
+              <div>
+                <p className="text-xs text-zinc-500">
+                  Direct inquiries
+                </p>
+
+                <p className="mt-2 break-all text-xl font-semibold md:text-3xl">
+                  miguelbesa249@gmail.com
+                </p>
+              </div>
+
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=miguelbesa249@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center justify-center gap-1 rounded-md bg-white px-6 py-3 text-sm font-bold text-zinc-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Send message
+                <ArrowOutwardIcon sx={{ fontSize: 16 }} />
+              </a>
+            </div>
+
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <ContactLink 
+                label="Professional profile"
+                text="LinkedIn"
+                href="https://www.linkedin.com/in/miguelbesa2420021214"
+              />
+
+              <ContactLink
+                label="Curriculum vitae"
+                text="Download resume"
+                onClick={openPdf}
+                down
+              />
+            </div>
+          </Reveal>
+
+          <p className="mt-16 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
+            Copyright © {new Date().getFullYear()} Miguel Antonio Besa. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
